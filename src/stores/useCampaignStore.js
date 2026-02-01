@@ -60,6 +60,18 @@ const useCampaignStore = create((set, get) => ({
     });
   },
 
+  completeAllTasks(taskIds) {
+    set((state) => {
+      const next = new Set(state.completedTasks);
+      for (const id of taskIds) {
+        next.add(id);
+      }
+      const newState = { completedTasks: next };
+      saveToStorage({ ...state, ...newState });
+      return newState;
+    });
+  },
+
   reorderAreas(actId, newOrder) {
     set((state) => {
       const newAreaOrder = { ...state.areaOrder, [actId]: newOrder };
