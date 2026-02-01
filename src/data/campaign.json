@@ -1,0 +1,237 @@
+{
+  "acts": [
+    {
+      "id": "act1",
+      "name": "Act 1",
+      "areas": [
+        {
+          "id": "clearfell-encampment",
+          "name": "Clearfell Encampment",
+          "prerequisites": [],
+          "tasks": [
+            { "id": "a1-ce-wp", "name": "Get Waypoint", "type": "waypoint" },
+            { "id": "a1-ce-talk", "name": "Talk to Alva", "type": "quest" }
+          ]
+        },
+        {
+          "id": "the-grelwood",
+          "name": "The Grelwood",
+          "prerequisites": ["clearfell-encampment"],
+          "tasks": [
+            { "id": "a1-gw-explore", "name": "Find the passage to Hunting Grounds", "type": "quest" }
+          ]
+        },
+        {
+          "id": "hunting-grounds",
+          "name": "Hunting Grounds",
+          "prerequisites": ["the-grelwood"],
+          "tasks": [
+            { "id": "a1-hg-wp", "name": "Get Waypoint", "type": "waypoint" },
+            { "id": "a1-hg-boss", "name": "Defeat the Alpha Wolf", "type": "quest" }
+          ]
+        },
+        {
+          "id": "freythorn",
+          "name": "Freythorn",
+          "prerequisites": ["the-grelwood"],
+          "tasks": [
+            { "id": "a1-ft-wp", "name": "Get Waypoint", "type": "waypoint" },
+            { "id": "a1-ft-quest", "name": "Find the Witch's Hut", "type": "quest" },
+            { "id": "a1-ft-skill", "name": "Passive Skill Point (Red Altar)", "type": "skill_point" }
+          ]
+        },
+        {
+          "id": "ogham-farmlands",
+          "name": "Ogham Farmlands",
+          "prerequisites": ["hunting-grounds"],
+          "tasks": [
+            { "id": "a1-of-wp", "name": "Get Waypoint", "type": "waypoint" },
+            { "id": "a1-of-explore", "name": "Find entrance to Manor Ramparts", "type": "quest" }
+          ]
+        },
+        {
+          "id": "ogham-manor",
+          "name": "Ogham Manor",
+          "prerequisites": ["ogham-farmlands"],
+          "tasks": [
+            { "id": "a1-om-wp", "name": "Get Waypoint", "type": "waypoint" },
+            { "id": "a1-om-boss", "name": "Defeat The Bloated Miller", "type": "quest" }
+          ]
+        },
+        {
+          "id": "the-murkwood",
+          "name": "The Murkwood",
+          "prerequisites": ["ogham-farmlands"],
+          "tasks": [
+            { "id": "a1-mw-explore", "name": "Find the path to Cemetary", "type": "quest" }
+          ]
+        },
+        {
+          "id": "cemetery-of-the-eternals",
+          "name": "Cemetery of the Eternals",
+          "prerequisites": ["the-murkwood"],
+          "tasks": [
+            { "id": "a1-coe-wp", "name": "Get Waypoint", "type": "waypoint" },
+            { "id": "a1-coe-trial", "name": "Complete the Trial of the Sekhemas", "type": "trial" },
+            { "id": "a1-coe-skill", "name": "Passive Skill Point (Trial Reward)", "type": "skill_point" }
+          ]
+        },
+        {
+          "id": "mausoleum-of-the-praetor",
+          "name": "Mausoleum of the Praetor",
+          "prerequisites": ["cemetery-of-the-eternals"],
+          "tasks": [
+            { "id": "a1-mp-boss", "name": "Defeat the Lachlann of Endless Lament", "type": "quest" },
+            { "id": "a1-mp-complete", "name": "Complete Act 1", "type": "quest" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "act2",
+      "name": "Act 2",
+      "areas": [
+        {
+          "id": "vastiri-outskirts",
+          "name": "Vastiri Outskirts",
+          "prerequisites": [],
+          "tasks": [
+            { "id": "a2-vo-wp", "name": "Get Waypoint", "type": "waypoint" },
+            { "id": "a2-vo-talk", "name": "Talk to Renly", "type": "quest" }
+          ]
+        },
+        {
+          "id": "the-dusty-dunes",
+          "name": "The Dusty Dunes",
+          "prerequisites": ["vastiri-outskirts"],
+          "tasks": [
+            { "id": "a2-dd-explore", "name": "Cross the desert to reach the Oasis", "type": "quest" }
+          ]
+        },
+        {
+          "id": "the-oasis",
+          "name": "The Oasis",
+          "prerequisites": ["the-dusty-dunes"],
+          "tasks": [
+            { "id": "a2-oa-wp", "name": "Get Waypoint", "type": "waypoint" },
+            { "id": "a2-oa-quest", "name": "Talk to Asala", "type": "quest" }
+          ]
+        },
+        {
+          "id": "deshar",
+          "name": "Deshar",
+          "prerequisites": ["the-oasis"],
+          "tasks": [
+            { "id": "a2-de-wp", "name": "Get Waypoint", "type": "waypoint" },
+            { "id": "a2-de-quest", "name": "Find the entrance to the Buried Shrines", "type": "quest" }
+          ]
+        },
+        {
+          "id": "buried-shrines",
+          "name": "Buried Shrines",
+          "prerequisites": ["deshar"],
+          "tasks": [
+            { "id": "a2-bs-skill", "name": "Passive Skill Point (Shrine Offering)", "type": "skill_point" },
+            { "id": "a2-bs-quest", "name": "Find the Sealed Door", "type": "quest" }
+          ]
+        },
+        {
+          "id": "halani-gates",
+          "name": "Halani Gates",
+          "prerequisites": ["the-oasis"],
+          "tasks": [
+            { "id": "a2-hg-wp", "name": "Get Waypoint", "type": "waypoint" },
+            { "id": "a2-hg-quest", "name": "Open the gates to the palace", "type": "quest" }
+          ]
+        },
+        {
+          "id": "the-trial-of-the-sekhemas-act2",
+          "name": "Trial of the Sekhemas",
+          "prerequisites": ["halani-gates"],
+          "tasks": [
+            { "id": "a2-trial-complete", "name": "Complete the Trial", "type": "trial" },
+            { "id": "a2-trial-skill", "name": "Passive Skill Point (Trial Reward)", "type": "skill_point" }
+          ]
+        },
+        {
+          "id": "palace-of-dusk",
+          "name": "Palace of Dusk",
+          "prerequisites": ["halani-gates"],
+          "tasks": [
+            { "id": "a2-pd-boss", "name": "Defeat Jamanra, the Abomination", "type": "quest" },
+            { "id": "a2-pd-complete", "name": "Complete Act 2", "type": "quest" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "act3",
+      "name": "Act 3",
+      "areas": [
+        {
+          "id": "utzaal",
+          "name": "Utzaal",
+          "prerequisites": [],
+          "tasks": [
+            { "id": "a3-uz-wp", "name": "Get Waypoint", "type": "waypoint" },
+            { "id": "a3-uz-talk", "name": "Talk to Lidiya", "type": "quest" }
+          ]
+        },
+        {
+          "id": "jungle-ruins",
+          "name": "Jungle Ruins",
+          "prerequisites": ["utzaal"],
+          "tasks": [
+            { "id": "a3-jr-explore", "name": "Find passage deeper into the jungle", "type": "quest" }
+          ]
+        },
+        {
+          "id": "the-venom-crypts",
+          "name": "The Venom Crypts",
+          "prerequisites": ["jungle-ruins"],
+          "tasks": [
+            { "id": "a3-vc-wp", "name": "Get Waypoint", "type": "waypoint" },
+            { "id": "a3-vc-quest", "name": "Defeat the Serpent Queen", "type": "quest" }
+          ]
+        },
+        {
+          "id": "infested-barrens",
+          "name": "Infested Barrens",
+          "prerequisites": ["jungle-ruins"],
+          "tasks": [
+            { "id": "a3-ib-wp", "name": "Get Waypoint", "type": "waypoint" },
+            { "id": "a3-ib-skill", "name": "Passive Skill Point (Hidden Cache)", "type": "skill_point" },
+            { "id": "a3-ib-explore", "name": "Find entrance to the Matlan Waterways", "type": "quest" }
+          ]
+        },
+        {
+          "id": "matlan-waterways",
+          "name": "Matlan Waterways",
+          "prerequisites": ["infested-barrens"],
+          "tasks": [
+            { "id": "a3-mw-wp", "name": "Get Waypoint", "type": "waypoint" },
+            { "id": "a3-mw-explore", "name": "Navigate through the waterways", "type": "quest" }
+          ]
+        },
+        {
+          "id": "trial-of-the-sekhemas-act3",
+          "name": "Trial of the Sekhemas",
+          "prerequisites": ["infested-barrens"],
+          "tasks": [
+            { "id": "a3-trial-complete", "name": "Complete the Trial", "type": "trial" },
+            { "id": "a3-trial-skill", "name": "Passive Skill Point (Trial Reward)", "type": "skill_point" }
+          ]
+        },
+        {
+          "id": "temple-of-the-sun",
+          "name": "Temple of Kopec",
+          "prerequisites": ["matlan-waterways"],
+          "tasks": [
+            { "id": "a3-ts-boss", "name": "Defeat Doryani, the Wretched", "type": "quest" },
+            { "id": "a3-ts-complete", "name": "Complete Act 3", "type": "quest" }
+          ]
+        }
+      ]
+    }
+  ]
+}

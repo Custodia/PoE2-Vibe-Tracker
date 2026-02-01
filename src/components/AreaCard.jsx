@@ -1,0 +1,72 @@
+import { useSortable } from '@dnd-kit/sortable';
+import { CSS } from '@dnd-kit/utilities';
+import TaskItem from './TaskItem';
+import useCampaignStore from '../stores/useCampaignStore';
+
+export default function AreaCard({ area }) {
+  const completedTasks = useCampaignStore((s) => s.completedTasks);
+  const doneCount = area.tasks.filter((t) => completedTasks.has(t.id)).length;
+  const totalCount = area.tasks.length;
+  const allDone = totalCount > 0 && doneCount === totalCount;
+
+  const {
+    attributes,
+    listeners,
+    setNodeRef,
+    transform,
+    transition,
+    isDragging,
+  } = useSortable({ id: area.id });
+
+  const style = {
+    transform: CSS.Transform.toString(transform),
+    transition,
+  };
+
+  return (
+    <div
+      ref={setNodeRef}
+      style={style}
+      className={`rounded-lg border transition-colors ${
+        isDragging
+          ? 'border-indigo-500 bg-gray-800/80 shadow-lg shadow-indigo-500/10 z-10'
+          : allDone
+            ? 'border-gray-700/50 bg-gray-800/40'
+            : 'border-gray-700 bg-gray-800'
+      }`}
+    >
+      <div className="flex items-center gap-2 px-4 py-3 border-b border-gray-700/50">
+        <button
+          {...attributes}
+          {...listeners}
+          className="cursor-grab active:cursor-grabbing text-gray-500 hover:text-gray-300 touch-none"
+          aria-label="Drag to reorder"
+        >
+          <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 16 16">
+            <circle cx="5" cy="3" r="1.5" />
+            <circle cx="11" cy="3" r="1.5" />
+            <circle cx="5" cy="8" r="1.5" />
+            <circle cx="11" cy="8" r="1.5" />
+            <circle cx="5" cy="13" r="1.5" />
+            <circle cx="11" cy="13" r="1.5" />
+          </svg>
+        </button>
+        <h3 className={`flex-1 font-semibold text-sm ${allDone ? 'text-gray-500' : 'text-gray-100'}`}>
+          {area.name}
+        </h3>
+        <span className={`text-xs font-medium px-2 py-0.5 rounded-full ${
+          allDone
+            ? 'bg-emerald-900/50 text-emerald-400'
+            : 'bg-gray-700 text-gray-400'
+        }`}>
+          {doneCount}/{totalCount}
+        </span>
+      </div>
+      <div className="px-2 py-2 space-y-0.5">
+        {area.tasks.map((task) => (
+          <TaskItem key={task.id} task={task} />
+        ))}
+      </div>
+    </div>
+  );
+}
