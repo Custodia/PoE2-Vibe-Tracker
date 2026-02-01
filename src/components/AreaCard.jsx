@@ -13,7 +13,7 @@ export default function AreaCard({ area }) {
   const [collapsed, setCollapsed] = useState(allDone);
 
   useEffect(() => {
-    if (allDone) setCollapsed(true);
+    setCollapsed(allDone);
   }, [allDone]);
 
   const {
