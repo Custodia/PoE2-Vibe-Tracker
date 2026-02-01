@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useMemo } from 'react';
 import {
   DndContext,
   closestCenter,
@@ -52,8 +52,6 @@ export default function ActPanel({ act }) {
     }
   }
 
-  const [showCompleted, setShowCompleted] = useState(false);
-
   const completedTasks = useCampaignStore((s) => s.completedTasks);
   const totalTasks = act.areas.reduce((sum, a) => sum + a.tasks.length, 0);
   const doneTasks = act.areas.reduce(
@@ -61,15 +59,6 @@ export default function ActPanel({ act }) {
     0
   );
   const pct = totalTasks === 0 ? 0 : Math.round((doneTasks / totalTasks) * 100);
-
-  const isAreaComplete = (area) => {
-    return area.tasks.length > 0 && area.tasks.every((t) => completedTasks.has(t.id));
-  };
-
-  const incompleteAreas = orderedAreas.filter((a) => !isAreaComplete(a));
-  const completedAreas = orderedAreas.filter((a) => isAreaComplete(a));
-  const visibleAreas = showCompleted ? orderedAreas : incompleteAreas;
-  const visibleAreaIds = showCompleted ? areaOrder : incompleteAreas.map((a) => a.id);
 
   return (
     <div>
@@ -85,23 +74,14 @@ export default function ActPanel({ act }) {
         </span>
       </div>
 
-      {completedAreas.length > 0 && (
-        <button
-          onClick={() => setShowCompleted((v) => !v)}
-          className="mb-3 w-full text-xs text-gray-500 hover:text-gray-300 py-2 rounded border border-gray-800 hover:border-gray-700 transition-colors"
-        >
-          {showCompleted ? 'Hide' : 'Show'} completed ({completedAreas.length})
-        </button>
-      )}
-
       <DndContext
         sensors={sensors}
         collisionDetection={closestCenter}
         onDragEnd={handleDragEnd}
       >
-        <SortableContext items={visibleAreaIds} strategy={verticalListSortingStrategy}>
+        <SortableContext items={areaOrder} strategy={verticalListSortingStrategy}>
           <div className="space-y-3">
-            {visibleAreas.map((area) => (
+            {orderedAreas.map((area) => (
               <AreaCard key={area.id} area={area} />
             ))}
           </div>
