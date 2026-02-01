@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import { useSortable } from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
 import TaskItem from './TaskItem';
@@ -9,6 +10,11 @@ export default function AreaCard({ area }) {
   const doneCount = area.tasks.filter((t) => completedTasks.has(t.id)).length;
   const totalCount = area.tasks.length;
   const allDone = totalCount > 0 && doneCount === totalCount;
+  const [collapsed, setCollapsed] = useState(allDone);
+
+  useEffect(() => {
+    if (allDone) setCollapsed(true);
+  }, [allDone]);
 
   const {
     attributes,
@@ -36,10 +42,14 @@ export default function AreaCard({ area }) {
             : 'border-gray-700 bg-gray-800'
       }`}
     >
-      <div className="flex items-center gap-2 px-4 py-3 border-b border-gray-700/50">
+      <div
+        className={`flex items-center gap-2 px-4 py-3 ${collapsed ? '' : 'border-b border-gray-700/50'} ${allDone ? 'cursor-pointer' : ''}`}
+        onClick={allDone ? () => setCollapsed((v) => !v) : undefined}
+      >
         <button
           {...attributes}
           {...listeners}
+          onClick={(e) => e.stopPropagation()}
           className="cursor-grab active:cursor-grabbing text-gray-500 hover:text-gray-300 touch-none"
           aria-label="Drag to reorder"
         >
@@ -70,12 +80,22 @@ export default function AreaCard({ area }) {
         }`}>
           {doneCount}/{totalCount}
         </span>
+        {allDone && (
+          <svg className="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+            {collapsed
+              ? <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+              : <path strokeLinecap="round" strokeLinejoin="round" d="M5 15l7-7 7 7" />
+            }
+          </svg>
+        )}
       </div>
-      <div className="px-2 py-2 space-y-0.5">
-        {area.tasks.map((task) => (
-          <TaskItem key={task.id} task={task} />
-        ))}
-      </div>
+      {!collapsed && (
+        <div className="px-2 py-2 space-y-0.5">
+          {area.tasks.map((task) => (
+            <TaskItem key={task.id} task={task} />
+          ))}
+        </div>
+      )}
     </div>
   );
 }
