@@ -42,7 +42,7 @@ function buildDefaultAreaOrder() {
 const saved = loadFromStorage();
 const defaultOrder = buildDefaultAreaOrder();
 
-const useCampaignStore = create((set, get) => ({
+const useCampaignStore = create((set, _get) => ({
   completedTasks: saved?.completedTasks || new Set(),
   areaOrder: { ...defaultOrder, ...saved?.areaOrder },
 
