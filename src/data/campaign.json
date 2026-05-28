@@ -694,48 +694,53 @@
       "group": "interludes",
       "areas": [
         {
-          "id": "khari-crossing",
-          "name": "The Khari Crossing",
+          "id": "scorched-farmlands",
+          "name": "Scorched Farmlands",
           "prerequisites": [],
           "tasks": [
-            { "id": "i1-kc-perm1", "name": "Kill Akthi and Anundr", "type": "permanent_reward", "reward": "+2 Weapon Set Passive Skill Points" },
-            { "id": "i1-kc-league", "name": "League Mechanic", "type": "league_mechanic", "reward": "League Mechanic" }
+            { "id": "i1-sf-quest1", "name": "Defeat Isolde of the White Shroud and Heldra of the Black Pyre", "type": "quest", "tags": ["boss"] },
+            { "id": "i1-sf-wp", "name": "Activate Waypoint", "type": "waypoint" },
+            { "id": "i1-sf-league", "name": "League Mechanic", "type": "league_mechanic" }
           ]
         },
         {
-          "id": "skullmaw-stairway",
-          "name": "The Khari Crossing - Skullmaw Stairway",
-          "prerequisites": ["khari-crossing"],
+          "id": "stones-of-serle",
+          "name": "Stones of Serle",
+          "prerequisites": ["scorched-farmlands"],
           "tasks": [
-            { "id": "i1-ss-perm1", "name": "Explore zone and loot Molten Shrine, use Molten One's Gift", "type": "permanent_reward", "reward": "+5% Maximum Life" },
-            { "id": "i1-ss-league", "name": "League Mechanic", "type": "league_mechanic", "reward": "League Mechanic" }
+            { "id": "i1-sos-quest1", "name": "Defeat Siora, Blade of the Mists", "type": "quest", "tags": ["boss"] },
+            { "id": "i1-sos-wp", "name": "Activate Waypoint", "type": "waypoint" },
+            { "id": "i1-sos-league", "name": "League Mechanic", "type": "league_mechanic" }
           ]
         },
         {
-          "id": "qimah",
-          "name": "Qimah",
-          "prerequisites": ["skullmaw-stairway"],
+          "id": "the-blackwood",
+          "name": "The Blackwood",
+          "prerequisites": ["stones-of-serle"],
           "tasks": [
-            { "id": "i1-qi-perm1", "name": "Interact with the 7 Pillars (hidden in niches at map edge)", "type": "permanent_reward", "reward": "Swapable: +5 All Attributes / +5% All Ele Res / +12% CDR / +3% Move Speed / +20% Presence AoE / +15% Global Defences" },
-            { "id": "i1-qi-league", "name": "League Mechanic", "type": "league_mechanic", "reward": "League Mechanic" }
+            { "id": "i1-bw-bonus1", "name": "Find Omen Altars", "type": "additional_reward", "reward": "Random Omens for crafting" },
+            { "id": "i1-bw-wp", "name": "Activate Waypoint", "type": "waypoint" },
+            { "id": "i1-bw-league", "name": "League Mechanic", "type": "league_mechanic" }
           ]
         },
         {
-          "id": "sel-khari-sanctuary",
-          "name": "Sel Khari Sanctuary",
-          "prerequisites": ["qimah"],
+          "id": "wolvenhold",
+          "name": "Wolvenhold",
+          "prerequisites": ["the-blackwood"],
           "tasks": [
-            { "id": "i1-sk-bonus1", "name": "Find 2 Baryas & place in sockets on left and right of map", "type": "additional_reward", "reward": "Pick 1 of 4 rare amulets + 1 of 4 rare rings (heavily weighted)" },
-            { "id": "i1-sk-league", "name": "League Mechanic", "type": "league_mechanic", "reward": "League Mechanic" }
+            { "id": "i3-wh-perm1", "name": "Kill Oswin, the Dread Warden", "type": "permanent_reward", "reward": "+2 Weapon Set Passive Skill Points", "tags": ["boss"] },
+            { "id": "i1-wv-wp", "name": "Activate Waypoint", "type": "waypoint" },
+            { "id": "i1-wv-league", "name": "League Mechanic", "type": "league_mechanic" }
           ]
         },
         {
-          "id": "qirnah-reservoir",
-          "name": "Qirnah Reservoir",
-          "prerequisites": ["sel-khari-sanctuary"],
+          "id": "holten-estate",
+          "name": "Holten Estate",
+          "prerequisites": ["wolvenhold"],
           "tasks": [
-            { "id": "i1-qr-bonus1", "name": "Find Vials and use them on wells", "type": "additional_reward", "reward": "Various currency" },
-            { "id": "i1-qr-league", "name": "League Mechanic", "type": "league_mechanic", "reward": "League Mechanic" }
+            { "id": "i1-he-quest1", "name": "Defeat Thane Wulfric and Lady Elyswyth", "type": "quest", "tags": ["boss"] },
+            { "id": "i1-he-wp", "name": "Activate Waypoint", "type": "waypoint" },
+            { "id": "i1-he-league", "name": "League Mechanic", "type": "league_mechanic" }
           ]
         }
       ]
@@ -746,30 +751,64 @@
       "group": "interludes",
       "areas": [
         {
-          "id": "kriar-village",
-          "name": "Kriar Village",
+          "id": "khari-crossing",
+          "name": "The Khari Crossing",
           "prerequisites": [],
           "tasks": [
-            { "id": "i2-kv-perm1", "name": "Kill Lythara, The Wayward Spear", "type": "permanent_reward", "reward": "+40 Spirit" },
-            { "id": "i2-kv-league", "name": "League Mechanic", "type": "league_mechanic", "reward": "League Mechanic" }
+            { "id": "i1-kc-perm1", "name": "Kill Akthi and Anundr", "type": "permanent_reward", "reward": "+2 Weapon Set Passive Skill Points", "tags": ["boss"] },
+            { "id": "i1-ss-perm1", "name": "Loot Molten Shrine, use Molten One's Gift", "type": "permanent_reward", "reward": "+5% Maximum Life" },
+            { "id": "i1-kc-league", "name": "League Mechanic", "type": "league_mechanic" }
           ]
         },
         {
-          "id": "howling-caves",
-          "name": "Howling Caves",
-          "prerequisites": ["kriar-village"],
+          "id": "pools-of-khatal",
+          "name": "Pools of Khatal",
+          "prerequisites": ["khari-crossing"],
           "tasks": [
-            { "id": "i2-hc-perm1", "name": "Kill The Abominable Yeti", "type": "permanent_reward", "reward": "+2 Weapon Set Passive Skill Points" },
-            { "id": "i2-hc-league", "name": "League Mechanic", "type": "league_mechanic", "reward": "League Mechanic" }
+            { "id": "i2-pk-wp", "name": "Activate Waypoint", "type": "waypoint" },
+            { "id": "i2-pk-league", "name": "League Mechanic", "type": "league_mechanic" }
           ]
         },
         {
-          "id": "kriar-peaks",
-          "name": "Kriar Peaks",
-          "prerequisites": ["howling-caves"],
+          "id": "sel-khari-sanctuary",
+          "name": "Sel Khari Sanctuary",
+          "prerequisites": ["pools-of-khatal"],
           "tasks": [
-            { "id": "i2-kp-bonus1", "name": "Talk to Elder Madox", "type": "additional_reward", "reward": "Free Unique of your choice" },
-            { "id": "i2-kp-league", "name": "League Mechanic", "type": "league_mechanic", "reward": "League Mechanic" }
+            { "id": "i2-sk-quest1", "name": "Defeat Elzarah, the Cobra Lord", "type": "quest", "tags": ["boss"] },
+            { "id": "i1-sk-bonus1", "name": "Find 2 Baryas & place in sockets", "type": "additional_reward", "reward": "Wish for Rare Ring, Amulet, or Jewel" },
+            { "id": "i2-sk-wp", "name": "Activate Waypoint", "type": "waypoint" },
+            { "id": "i1-sk-league", "name": "League Mechanic", "type": "league_mechanic" }
+          ]
+        },
+        {
+          "id": "the-galai-gates",
+          "name": "The Galai Gates",
+          "prerequisites": ["sel-khari-sanctuary"],
+          "tasks": [
+            { "id": "i2-gg-quest1", "name": "Defeat Vornas, the Fell Flame", "type": "quest", "tags": ["boss"] },
+            { "id": "i2-gg-wp", "name": "Activate Waypoint", "type": "waypoint" },
+            { "id": "i2-gg-league", "name": "League Mechanic", "type": "league_mechanic" }
+          ]
+        },
+        {
+          "id": "qimah",
+          "name": "Qimah",
+          "prerequisites": ["the-galai-gates"],
+          "tasks": [
+            { "id": "i1-qi-perm1", "name": "Interact with the 7 Pillars (hidden in niches at map edge)", "type": "permanent_reward", "reward": "Swapable: +5 All Attributes / +5% All Ele Res / +12% CDR / +3% Move Speed / +20% Presence AoE / +15% Global Defences" },
+            { "id": "i2-qi-wp", "name": "Activate Waypoint", "type": "waypoint" },
+            { "id": "i1-qi-league", "name": "League Mechanic", "type": "league_mechanic" }
+          ]
+        },
+        {
+          "id": "qimah-reservoir",
+          "name": "Qimah Reservoir",
+          "prerequisites": ["qimah"],
+          "tasks": [
+            { "id": "i2-qr-quest1", "name": "Defeat Azmadi, the Faridun Prince", "type": "quest", "tags": ["boss"] },
+            { "id": "i1-qr-bonus1", "name": "Find Vials and use them on Sacred Wells", "type": "additional_reward", "reward": "Various currency" },
+            { "id": "i2-qr-wp", "name": "Activate Waypoint", "type": "waypoint" },
+            { "id": "i2-qr-league", "name": "League Mechanic", "type": "league_mechanic" }
           ]
         }
       ]
@@ -780,21 +819,74 @@
       "group": "interludes",
       "areas": [
         {
-          "id": "wolvenhold",
-          "name": "Wolvenhold",
+          "id": "ashen-forest",
+          "name": "Ashen Forest",
           "prerequisites": [],
           "tasks": [
-            { "id": "i3-wh-perm1", "name": "Kill Oswin, The Dread Warden", "type": "permanent_reward", "reward": "+2 Weapon Set Passive Skill Points" },
-            { "id": "i3-wh-league", "name": "League Mechanic", "type": "league_mechanic", "reward": "League Mechanic" }
+            { "id": "i3-af-bonus1", "name": "Interact with Ancient Monument", "type": "additional_reward", "reward": "Uncut Skill Gem L14" },
+            { "id": "i3-af-wp", "name": "Activate Waypoint", "type": "waypoint" },
+            { "id": "i3-af-league", "name": "League Mechanic", "type": "league_mechanic" }
           ]
         },
         {
-          "id": "holten",
-          "name": "Holten",
-          "prerequisites": ["wolvenhold"],
+          "id": "kriar-village",
+          "name": "Kriar Village",
+          "prerequisites": ["ashen-forest"],
           "tasks": [
-            { "id": "i3-ho-bonus1", "name": "Interact with Soul of the Ferryman at centre of zone", "type": "additional_reward", "reward": "Trades greater runes for gold" },
-            { "id": "i3-ho-league", "name": "League Mechanic", "type": "league_mechanic", "reward": "League Mechanic" }
+            { "id": "i2-kv-perm1", "name": "Kill Lythara, the Wayward Spear", "type": "permanent_reward", "reward": "+40 Maximum Spirit + Uncut Spirit Gem L14", "tags": ["boss"] },
+            { "id": "i3-kv-wp", "name": "Activate Waypoint", "type": "waypoint" },
+            { "id": "i3-kv-league", "name": "League Mechanic", "type": "league_mechanic" }
+          ]
+        },
+        {
+          "id": "glacial-tarn",
+          "name": "Glacial Tarn",
+          "prerequisites": ["kriar-village"],
+          "tasks": [
+            { "id": "i3-gt-quest1", "name": "Defeat Rakkar, the Frozen Talon", "type": "quest", "tags": ["boss"] },
+            { "id": "i3-gt-wp", "name": "Activate Waypoint", "type": "waypoint" },
+            { "id": "i3-gt-league", "name": "League Mechanic", "type": "league_mechanic" }
+          ]
+        },
+        {
+          "id": "howling-caves",
+          "name": "Howling Caves",
+          "prerequisites": ["glacial-tarn"],
+          "optional": true,
+          "tasks": [
+            { "id": "i2-hc-perm1", "name": "Kill The Abominable Yeti", "type": "permanent_reward", "reward": "+2 Weapon Set Passive Skill Points", "tags": ["boss"] },
+            { "id": "i3-hc-wp", "name": "Activate Waypoint", "type": "waypoint" },
+            { "id": "i3-hc-league", "name": "League Mechanic", "type": "league_mechanic" }
+          ]
+        },
+        {
+          "id": "kriar-peaks",
+          "name": "Kriar Peaks",
+          "prerequisites": ["glacial-tarn"],
+          "tasks": [
+            { "id": "i2-kp-bonus1", "name": "Talk to Elder Madox", "type": "additional_reward", "reward": "Free Unique of your choice" },
+            { "id": "i3-kp-wp", "name": "Activate Waypoint", "type": "waypoint" },
+            { "id": "i3-kp-league", "name": "League Mechanic", "type": "league_mechanic" }
+          ]
+        },
+        {
+          "id": "etched-ravine",
+          "name": "Etched Ravine",
+          "prerequisites": ["kriar-peaks"],
+          "tasks": [
+            { "id": "i3-er-quest1", "name": "Defeat Stormgore, the Guardian", "type": "quest", "tags": ["boss"] },
+            { "id": "i3-er-wp", "name": "Activate Waypoint", "type": "waypoint" },
+            { "id": "i3-er-league", "name": "League Mechanic", "type": "league_mechanic" }
+          ]
+        },
+        {
+          "id": "the-cuachic-vault",
+          "name": "The Cuachic Vault",
+          "prerequisites": ["etched-ravine"],
+          "tasks": [
+            { "id": "i3-cv-quest1", "name": "Defeat Zelina, Blood Priestess and Zolin, Blood Priest", "type": "quest", "tags": ["boss"] },
+            { "id": "i3-cv-wp", "name": "Activate Waypoint", "type": "waypoint" },
+            { "id": "i3-cv-league", "name": "League Mechanic", "type": "league_mechanic" }
           ]
         }
       ]
