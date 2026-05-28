@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useSortable } from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
 import TaskItem from './TaskItem';
@@ -7,14 +7,14 @@ import useCampaignStore from '../stores/useCampaignStore';
 export default function AreaCard({ area }) {
   const completedTasks = useCampaignStore((s) => s.completedTasks);
   const completeAllTasks = useCampaignStore((s) => s.completeAllTasks);
+  const permTasks = area.tasks.filter((t) => t.type === 'permanent_reward');
+  const permDone = permTasks.filter((t) => completedTasks.has(t.id)).length;
   const doneCount = area.tasks.filter((t) => completedTasks.has(t.id)).length;
   const totalCount = area.tasks.length;
+  const permanentDone = permTasks.length > 0 ? permDone === permTasks.length : totalCount > 0 && doneCount === totalCount;
   const allDone = totalCount > 0 && doneCount === totalCount;
-  const [collapsed, setCollapsed] = useState(allDone);
-
-  useEffect(() => {
-    setCollapsed(allDone);
-  }, [allDone]);
+  const [manualCollapse, setManualCollapse] = useState(null);
+  const collapsed = manualCollapse !== null ? manualCollapse : allDone;
 
   const {
     attributes,
@@ -37,14 +37,14 @@ export default function AreaCard({ area }) {
       className={`rounded-lg border transition-colors ${
         isDragging
           ? 'border-indigo-500 bg-gray-800/80 shadow-lg shadow-indigo-500/10 z-10'
-          : allDone
+          : permanentDone
             ? 'border-gray-700/50 bg-gray-800/40'
             : 'border-gray-700 bg-gray-800'
       }`}
     >
       <div
-        className={`flex items-center gap-2 px-4 py-3 ${collapsed ? '' : 'border-b border-gray-700/50'} ${allDone ? 'cursor-pointer' : ''}`}
-        onClick={allDone ? () => setCollapsed((v) => !v) : undefined}
+        className={`flex items-center gap-2 px-4 py-3 cursor-pointer ${collapsed ? '' : 'border-b border-gray-700/50'}`}
+        onClick={() => setManualCollapse((v) => v !== null ? !v : !allDone)}
       >
         <button
           {...attributes}
@@ -62,10 +62,10 @@ export default function AreaCard({ area }) {
             <circle cx="11" cy="13" r="1.5" />
           </svg>
         </button>
-        <h3 className={`flex-1 font-semibold text-sm ${allDone ? 'text-gray-500' : 'text-gray-100'}`}>
+        <h3 className={`flex-1 font-semibold text-sm ${permanentDone ? 'text-gray-500' : 'text-gray-100'}`}>
           {area.name}
         </h3>
-        {!allDone && (
+        {!permanentDone && (
           <button
             onClick={() => completeAllTasks(area.tasks.map((t) => t.id))}
             className="text-[10px] text-gray-500 hover:text-gray-200 px-1.5 py-0.5 rounded border border-gray-700 hover:border-gray-500 transition-colors"
@@ -74,20 +74,18 @@ export default function AreaCard({ area }) {
           </button>
         )}
         <span className={`text-xs font-medium px-2 py-0.5 rounded-full ${
-          allDone
+          permanentDone
             ? 'bg-emerald-900/50 text-emerald-400'
             : 'bg-gray-700 text-gray-400'
         }`}>
           {doneCount}/{totalCount}
         </span>
-        {allDone && (
-          <svg className="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-            {collapsed
-              ? <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-              : <path strokeLinecap="round" strokeLinejoin="round" d="M5 15l7-7 7 7" />
-            }
-          </svg>
-        )}
+        <svg className="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+          {collapsed
+            ? <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+            : <path strokeLinecap="round" strokeLinejoin="round" d="M5 15l7-7 7 7" />
+          }
+        </svg>
       </div>
       {!collapsed && (
         <div className="px-2 py-2 space-y-0.5">

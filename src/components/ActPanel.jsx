@@ -53,25 +53,43 @@ export default function ActPanel({ act }) {
   }
 
   const completedTasks = useCampaignStore((s) => s.completedTasks);
-  const totalTasks = act.areas.reduce((sum, a) => sum + a.tasks.length, 0);
-  const doneTasks = act.areas.reduce(
-    (sum, a) => sum + a.tasks.filter((t) => completedTasks.has(t.id)).length,
-    0
-  );
+
+  const allTasks = act.areas.flatMap((a) => a.tasks);
+  const permTasks = allTasks.filter((t) => t.type === 'permanent_reward');
+  const permDone = permTasks.filter((t) => completedTasks.has(t.id)).length;
+  const permPct = permTasks.length === 0 ? 0 : Math.round((permDone / permTasks.length) * 100);
+
+  const totalTasks = allTasks.length;
+  const doneTasks = allTasks.filter((t) => completedTasks.has(t.id)).length;
   const pct = totalTasks === 0 ? 0 : Math.round((doneTasks / totalTasks) * 100);
 
   return (
     <div>
-      <div className="mb-4 flex items-center gap-3">
-        <div className="flex-1 h-2 bg-gray-700 rounded-full overflow-hidden">
-          <div
-            className="h-full bg-indigo-500 transition-all duration-300"
-            style={{ width: `${pct}%` }}
-          />
+      <div className="mb-4 space-y-1.5">
+        <div>
+          <div className="flex justify-between mb-1">
+            <span className="text-xs text-gray-400">Permanent</span>
+            <span className="text-xs text-gray-400 tabular-nums">{permDone}/{permTasks.length}</span>
+          </div>
+          <div className="h-2 bg-gray-700 rounded-full overflow-hidden">
+            <div
+              className="h-full bg-rose-500 transition-all duration-300"
+              style={{ width: `${permPct}%` }}
+            />
+          </div>
         </div>
-        <span className="text-xs text-gray-400 tabular-nums whitespace-nowrap">
-          {doneTasks}/{totalTasks} ({pct}%)
-        </span>
+        <div>
+          <div className="flex justify-between mb-1">
+            <span className="text-xs text-gray-400">All</span>
+            <span className="text-xs text-gray-400 tabular-nums">{doneTasks}/{totalTasks}</span>
+          </div>
+          <div className="h-2 bg-gray-700 rounded-full overflow-hidden">
+            <div
+              className="h-full bg-indigo-500 transition-all duration-300"
+              style={{ width: `${pct}%` }}
+            />
+          </div>
+        </div>
       </div>
 
       <DndContext

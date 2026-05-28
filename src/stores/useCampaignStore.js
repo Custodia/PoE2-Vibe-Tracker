@@ -39,12 +39,34 @@ function buildDefaultAreaOrder() {
   return order;
 }
 
+function reconcileAreaOrder(savedOrder, defaultOrder) {
+  const reconciled = {};
+  for (const actId of Object.keys(defaultOrder)) {
+    const defaultIds = defaultOrder[actId];
+    const savedIds = savedOrder[actId];
+    if (!savedIds) {
+      reconciled[actId] = defaultIds;
+      continue;
+    }
+    const validIds = new Set(defaultIds);
+    const kept = savedIds.filter((id) => validIds.has(id));
+    const keptSet = new Set(kept);
+    for (const id of defaultIds) {
+      if (!keptSet.has(id)) kept.push(id);
+    }
+    reconciled[actId] = kept;
+  }
+  return reconciled;
+}
+
 const saved = loadFromStorage();
 const defaultOrder = buildDefaultAreaOrder();
 
 const useCampaignStore = create((set, _get) => ({
   completedTasks: saved?.completedTasks || new Set(),
-  areaOrder: { ...defaultOrder, ...saved?.areaOrder },
+  areaOrder: saved?.areaOrder
+    ? reconcileAreaOrder(saved.areaOrder, defaultOrder)
+    : defaultOrder,
 
   toggleTask(taskId) {
     set((state) => {

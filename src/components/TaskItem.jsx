@@ -5,6 +5,9 @@ const typeBadgeColors = {
   waypoint: 'bg-sky-700 text-sky-100',
   skill_point: 'bg-emerald-700 text-emerald-100',
   trial: 'bg-purple-700 text-purple-100',
+  permanent_reward: 'bg-rose-700 text-rose-100',
+  additional_reward: 'bg-teal-700 text-teal-100',
+  league_mechanic: 'bg-orange-700 text-orange-100',
 };
 
 const typeLabels = {
@@ -12,6 +15,9 @@ const typeLabels = {
   waypoint: 'Waypoint',
   skill_point: 'Skill Point',
   trial: 'Trial',
+  permanent_reward: 'Permanent',
+  additional_reward: 'Bonus',
+  league_mechanic: 'League',
 };
 
 export default function TaskItem({ task }) {
@@ -30,7 +36,10 @@ export default function TaskItem({ task }) {
         className="w-4 h-4 rounded border-gray-500 bg-gray-800 text-indigo-500 focus:ring-indigo-500 focus:ring-offset-gray-900 shrink-0"
       />
       <span className={`flex-1 text-sm ${completed ? 'line-through text-gray-500' : 'text-gray-200'}`}>
-        {task.name}
+        {task.reward || task.name}
+        {task.reward && (
+          <span className={`block text-xs mt-0.5 ${completed ? 'text-gray-600' : 'text-gray-400'}`}>{task.name}</span>
+        )}
       </span>
       <span className={`text-[10px] font-semibold uppercase tracking-wider px-1.5 py-0.5 rounded ${badgeColor}`}>
         {label}
