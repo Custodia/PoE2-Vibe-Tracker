@@ -168,8 +168,10 @@
           "name": "Vastiri Outskirts",
           "prerequisites": [],
           "tasks": [
+            { "id": "a2-vo-quest1", "name": "Defeat Rathbreaker", "type": "quest", "tags": ["boss"] },
             { "id": "a2-vo-bonus1", "name": "Loot Devastated Camp", "type": "additional_reward", "reward": "Uncut Support Gem L2" },
-            { "id": "a2-vo-league", "name": "League Mechanic", "type": "league_mechanic", "reward": "League Mechanic" }
+            { "id": "a2-vo-wp", "name": "Activate Waypoint", "type": "waypoint" },
+            { "id": "a2-vo-league", "name": "League Mechanic", "type": "league_mechanic" }
           ]
         },
         {
@@ -177,77 +179,172 @@
           "name": "Mawdun Quarry",
           "prerequisites": ["vastiri-outskirts"],
           "tasks": [
-            { "id": "a2-mq-bonus1", "name": "Follow outer wall and loot camp (hard to find, don't backtrack)", "type": "additional_reward", "reward": "Artificer's Orb" },
-            { "id": "a2-mq-league", "name": "League Mechanic", "type": "league_mechanic", "reward": "League Mechanic" }
+            { "id": "a2-mq-bonus1", "name": "Find and loot Faridun War Cache", "type": "additional_reward", "reward": "Artificer's Orb" },
+            { "id": "a2-mq-wp", "name": "Activate Waypoint", "type": "waypoint" },
+            { "id": "a2-mq-league", "name": "League Mechanic", "type": "league_mechanic" }
+          ]
+        },
+        {
+          "id": "mawdun-mine",
+          "name": "Mawdun Mine",
+          "prerequisites": ["mawdun-quarry"],
+          "tasks": [
+            { "id": "a2-mm-quest1", "name": "Defeat Rudja, the Dread Engineer", "type": "quest", "tags": ["boss"] },
+            { "id": "a2-mm-wp", "name": "Activate Waypoint", "type": "waypoint" },
+            { "id": "a2-mm-league", "name": "League Mechanic", "type": "league_mechanic" }
           ]
         },
         {
           "id": "traitors-passage",
           "name": "Traitor's Passage",
-          "prerequisites": ["mawdun-quarry"],
+          "prerequisites": ["mawdun-mine"],
           "tasks": [
+            { "id": "a2-tp-bonus2", "name": "Kill Balbala, The Traitor", "type": "additional_reward", "reward": "Djinn Barya", "tags": ["boss"] },
             { "id": "a2-tp-bonus1", "name": "Find and loot the Bellchest", "type": "additional_reward", "reward": "Uncut Skill Gem L6" },
-            { "id": "a2-tp-bonus2", "name": "Kill Balbala", "type": "additional_reward", "reward": "Level 22 Barya" },
-            { "id": "a2-tp-league", "name": "League Mechanic", "type": "league_mechanic", "reward": "League Mechanic" }
+            { "id": "a2-tp-wp", "name": "Activate Waypoint", "type": "waypoint" },
+            { "id": "a2-tp-league", "name": "League Mechanic", "type": "league_mechanic" }
           ]
         },
         {
-          "id": "keth",
-          "name": "Keth",
+          "id": "halani-gates",
+          "name": "The Halani Gates",
           "prerequisites": ["traitors-passage"],
           "tasks": [
-            { "id": "a2-ke-perm1", "name": "Kill Kabala, Constrictor Queen", "type": "permanent_reward", "reward": "+2 Weapon Set Passive Skill Points" },
-            { "id": "a2-ke-perm2", "name": "Find the Kabal Clan Relic (dropped by hyenas exclusively)", "type": "permanent_reward", "reward": "Needed for Valley of the Titans altar" },
-            { "id": "a2-ke-bonus1", "name": "Find Treasure Room", "type": "additional_reward", "reward": "White base Amulet" },
-            { "id": "a2-ke-league", "name": "League Mechanic", "type": "league_mechanic", "reward": "League Mechanic" }
+            { "id": "a2-hg-quest1", "name": "Defeat Jamanra, the Risen King", "type": "quest", "tags": ["boss"] },
+            { "id": "a2-hg-league", "name": "League Mechanic", "type": "league_mechanic" }
+          ]
+        },
+        {
+          "id": "mastodon-badlands",
+          "name": "Mastodon Badlands",
+          "prerequisites": ["halani-gates"],
+          "optional": true,
+          "tasks": [
+            { "id": "a2-mbd-bonus1", "name": "Enter Lightless Passage", "type": "additional_reward", "reward": "Abyssal Crafting Unlock" },
+            { "id": "a2-mbd-wp", "name": "Activate Waypoint", "type": "waypoint" },
+            { "id": "a2-mbd-league", "name": "League Mechanic", "type": "league_mechanic" }
           ]
         },
         {
           "id": "bone-pits",
           "name": "Bone Pits",
-          "prerequisites": ["keth"],
+          "prerequisites": ["halani-gates"],
+          "optional": true,
           "tasks": [
             { "id": "a2-bp-perm1", "name": "Find the Sun Clan Relic (dropped by snakes exclusively)", "type": "permanent_reward", "reward": "Needed for Valley of the Titans altar" },
-            { "id": "a2-bp-league", "name": "League Mechanic", "type": "league_mechanic", "reward": "League Mechanic" }
+            { "id": "a2-bp-bonus1", "name": "Kill Iktab & Ekbab, return Mastodon Tusks", "type": "additional_reward", "reward": "Uncut Support Gem L2", "tags": ["boss"] },
+            { "id": "a2-bp-wp", "name": "Activate Waypoint", "type": "waypoint" },
+            { "id": "a2-bp-league", "name": "League Mechanic", "type": "league_mechanic" }
           ]
         },
         {
-          "id": "valley-of-the-titans",
-          "name": "Valley of the Titans",
-          "prerequisites": ["bone-pits"],
+          "id": "keth",
+          "name": "Keth",
+          "prerequisites": ["halani-gates"],
+          "optional": true,
           "tasks": [
-            { "id": "a2-vt-perm1", "name": "Deliver Relic to altar", "type": "permanent_reward", "reward": "+1 Charm Slot; Choose 30% Charm Charges gained or Charm Effect Duration (Swapable)" },
-            { "id": "a2-vt-bonus1", "name": "Complete guaranteed Abyss spawn", "type": "additional_reward", "reward": "Great EXP + Rare Loot" },
-            { "id": "a2-vt-league", "name": "League Mechanic", "type": "league_mechanic", "reward": "League Mechanic" }
+            { "id": "a2-ke-perm1", "name": "Kill Kabala, Constrictor Queen", "type": "permanent_reward", "reward": "+2 Weapon Set Passive Skill Points", "tags": ["boss"] },
+            { "id": "a2-ke-perm2", "name": "Find the Kabal Clan Relic (dropped by hyenas exclusively)", "type": "permanent_reward", "reward": "Needed for Valley of the Titans altar" },
+            { "id": "a2-ke-bonus1", "name": "Find Treasure Room", "type": "additional_reward", "reward": "White base Amulet" },
+            { "id": "a2-ke-wp", "name": "Activate Waypoint", "type": "waypoint" },
+            { "id": "a2-ke-league", "name": "League Mechanic", "type": "league_mechanic" }
           ]
         },
         {
-          "id": "deshar",
-          "name": "Deshar",
-          "prerequisites": ["valley-of-the-titans"],
+          "id": "lost-city",
+          "name": "The Lost City",
+          "prerequisites": ["keth"],
+          "optional": true,
           "tasks": [
-            { "id": "a2-de-perm1", "name": "Find corpse with Final Letter & deliver to Shambrin in caravan", "type": "permanent_reward", "reward": "+2 Weapon Set Passive Skill Points" },
-            { "id": "a2-de-bonus1", "name": "Find and loot the container along the left or right wall", "type": "additional_reward", "reward": "Artificer's Orb" },
-            { "id": "a2-de-bonus2", "name": "Kill the Watchful Twins", "type": "additional_reward", "reward": "Level 28 Barya + Rare Loot" },
-            { "id": "a2-de-league", "name": "League Mechanic", "type": "league_mechanic", "reward": "League Mechanic" }
-          ]
-        },
-        {
-          "id": "spires-of-deshar",
-          "name": "Spires of Deshar",
-          "prerequisites": ["deshar"],
-          "tasks": [
-            { "id": "a2-sd-perm1", "name": "Interact with the Sisters of Garukhan Shrine (just run, no kill needed)", "type": "permanent_reward", "reward": "+10% Lightning Resistance" },
-            { "id": "a2-sd-league", "name": "League Mechanic", "type": "league_mechanic", "reward": "League Mechanic" }
+            { "id": "a2-lc-wp", "name": "Activate Waypoint", "type": "waypoint" },
+            { "id": "a2-lc-league", "name": "League Mechanic", "type": "league_mechanic" }
           ]
         },
         {
           "id": "buried-shrines",
           "name": "Buried Shrines",
+          "prerequisites": ["lost-city"],
+          "optional": true,
+          "tasks": [
+            { "id": "a2-bs-bonus2", "name": "Kill Azarian, the Forsaken Son", "type": "additional_reward", "reward": "Uncut Support Gem L2", "tags": ["boss"] },
+            { "id": "a2-bs-bonus1", "name": "Find the Elemental Shrine and loot 1 of 3 chests", "type": "additional_reward", "reward": "Ruby Ring + Desert Rune, Topaz Ring + Storm Rune, or Sapphire Ring + Glacial Rune" },
+            { "id": "a2-bs-wp", "name": "Activate Waypoint", "type": "waypoint" },
+            { "id": "a2-bs-league", "name": "League Mechanic", "type": "league_mechanic" }
+          ]
+        },
+        {
+          "id": "valley-of-the-titans",
+          "name": "Valley of the Titans",
+          "prerequisites": ["halani-gates"],
+          "optional": true,
+          "tasks": [
+            { "id": "a2-vt-perm1", "name": "Deliver Relics to altar", "type": "permanent_reward", "reward": "+1 Charm Slot; Choose 30% Charm Charges gained or Charm Effect Duration (Swapable)" },
+            { "id": "a2-vt-bonus1", "name": "Complete guaranteed Abyss spawn", "type": "additional_reward", "reward": "Great EXP + Rare Loot" },
+            { "id": "a2-vt-wp", "name": "Activate Waypoint", "type": "waypoint" },
+            { "id": "a2-vt-league", "name": "League Mechanic", "type": "league_mechanic" }
+          ]
+        },
+        {
+          "id": "titan-grotto",
+          "name": "Titan Grotto",
+          "prerequisites": ["valley-of-the-titans"],
+          "optional": true,
+          "tasks": [
+            { "id": "a2-tg-bonus1", "name": "Kill Zalmarath, the Colossus", "type": "additional_reward", "reward": "Uncut Support Gem L2", "tags": ["boss"] },
+            { "id": "a2-tg-wp", "name": "Activate Waypoint", "type": "waypoint" },
+            { "id": "a2-tg-league", "name": "League Mechanic", "type": "league_mechanic" }
+          ]
+        },
+        {
+          "id": "deshar",
+          "name": "Deshar",
+          "prerequisites": ["halani-gates"],
+          "tasks": [
+            { "id": "a2-de-perm1", "name": "Find corpse with Final Letter & deliver to Shambrin in caravan", "type": "permanent_reward", "reward": "+2 Weapon Set Passive Skill Points" },
+            { "id": "a2-de-bonus2", "name": "Kill the Watchful Twins", "type": "additional_reward", "reward": "Level 28 Barya + Rare Loot", "tags": ["boss"] },
+            { "id": "a2-de-bonus1", "name": "Find and loot the container along the left or right wall", "type": "additional_reward", "reward": "Artificer's Orb" },
+            { "id": "a2-de-wp", "name": "Activate Waypoint", "type": "waypoint" },
+            { "id": "a2-de-league", "name": "League Mechanic", "type": "league_mechanic" }
+          ]
+        },
+        {
+          "id": "path-of-mourning",
+          "name": "Path of Mourning",
+          "prerequisites": ["deshar"],
+          "tasks": [
+            { "id": "a2-pm-bonus1", "name": "Loot Hushed Urn", "type": "additional_reward", "reward": "Uncut Support Gem L2" },
+            { "id": "a2-pm-wp", "name": "Activate Waypoint", "type": "waypoint" },
+            { "id": "a2-pm-league", "name": "League Mechanic", "type": "league_mechanic" }
+          ]
+        },
+        {
+          "id": "spires-of-deshar",
+          "name": "Spires of Deshar",
+          "prerequisites": ["path-of-mourning"],
+          "tasks": [
+            { "id": "a2-sd-quest1", "name": "Defeat Tor Gul, the Defiler", "type": "quest", "tags": ["boss"] },
+            { "id": "a2-sd-perm1", "name": "Interact with the Sisters of Garukhan Shrine", "type": "permanent_reward", "reward": "+10% Lightning Resistance" },
+            { "id": "a2-sd-wp", "name": "Activate Waypoint", "type": "waypoint" },
+            { "id": "a2-sd-league", "name": "League Mechanic", "type": "league_mechanic" }
+          ]
+        },
+        {
+          "id": "the-dreadnought",
+          "name": "The Dreadnought",
           "prerequisites": ["spires-of-deshar"],
           "tasks": [
-            { "id": "a2-bs-bonus1", "name": "Find the Elemental Shrine and loot 1 of 3 chests", "type": "additional_reward", "reward": "Ruby Ring + Desert Rune, Topaz Ring + Storm Rune, or Sapphire Ring + Glacial Rune" },
-            { "id": "a2-bs-league", "name": "League Mechanic", "type": "league_mechanic", "reward": "League Mechanic" }
+            { "id": "a2-dn-wp", "name": "Activate Waypoint", "type": "waypoint" },
+            { "id": "a2-dn-league", "name": "League Mechanic", "type": "league_mechanic" }
+          ]
+        },
+        {
+          "id": "dreadnought-vanguard",
+          "name": "Dreadnought Vanguard",
+          "prerequisites": ["the-dreadnought"],
+          "tasks": [
+            { "id": "a2-dv-quest1", "name": "Defeat Jamanra, the Abomination", "type": "quest", "tags": ["boss"] },
+            { "id": "a2-dv-wp", "name": "Activate Waypoint", "type": "waypoint" },
+            { "id": "a2-dv-league", "name": "League Mechanic", "type": "league_mechanic" }
           ]
         }
       ]
@@ -262,9 +359,10 @@
           "name": "Sandswept Marsh",
           "prerequisites": [],
           "tasks": [
-            { "id": "a3-sm-bonus1", "name": "Kill Rootridge", "type": "additional_reward", "reward": "Uncut Skill Gem L9" },
+            { "id": "a3-sm-bonus1", "name": "Kill Rootdredge", "type": "additional_reward", "reward": "Uncut Skill Gem L9", "tags": ["boss"] },
             { "id": "a3-sm-bonus2", "name": "Find and loot Orok Campfire", "type": "additional_reward", "reward": "Lesser Jeweller's Orb" },
-            { "id": "a3-sm-league", "name": "League Mechanic", "type": "league_mechanic", "reward": "League Mechanic" }
+            { "id": "a3-sm-wp", "name": "Activate Waypoint", "type": "waypoint" },
+            { "id": "a3-sm-league", "name": "League Mechanic", "type": "league_mechanic" }
           ]
         },
         {
@@ -272,65 +370,151 @@
           "name": "Jungle Ruins",
           "prerequisites": ["sandswept-marsh"],
           "tasks": [
-            { "id": "a3-jr-perm1", "name": "Kill Mighty Silverfist", "type": "permanent_reward", "reward": "+2 Weapon Set Passive Skill Points" },
+            { "id": "a3-jr-perm1", "name": "Kill Mighty Silverfist", "type": "permanent_reward", "reward": "+2 Weapon Set Passive Skill Points", "tags": ["boss"] },
             { "id": "a3-jr-bonus1", "name": "Find camp with Trader and chests", "type": "additional_reward", "reward": "Rare gloves + high quality equipment from trader" },
             { "id": "a3-jr-bonus2", "name": "Find Jungle Grave", "type": "additional_reward", "reward": "Rare belt of your choice (interact with Servi)" },
-            { "id": "a3-jr-league", "name": "League Mechanic", "type": "league_mechanic", "reward": "League Mechanic" }
-          ]
-        },
-        {
-          "id": "azak-bog",
-          "name": "Azak Bog",
-          "prerequisites": ["jungle-ruins"],
-          "tasks": [
-            { "id": "a3-ab-perm1", "name": "Kill Ignagduk, The Bog Witch", "type": "permanent_reward", "reward": "+30 Spirit + Uncut Spirit Gem" },
-            { "id": "a3-ab-bonus1", "name": "Find and start the Flame Ritual", "type": "additional_reward", "reward": "Incredible EXP spot (farm until level 34)" },
-            { "id": "a3-ab-league", "name": "League Mechanic", "type": "league_mechanic", "reward": "League Mechanic" }
+            { "id": "a3-jr-wp", "name": "Activate Waypoint", "type": "waypoint" },
+            { "id": "a3-jr-league", "name": "League Mechanic", "type": "league_mechanic" }
           ]
         },
         {
           "id": "venom-crypts",
           "name": "Venom Crypts",
-          "prerequisites": ["azak-bog"],
+          "prerequisites": ["jungle-ruins"],
+          "optional": true,
           "tasks": [
             { "id": "a3-vc-perm1", "name": "Find Venom Vial from corpse & deliver to Servi in camp", "type": "permanent_reward", "reward": "Permanent Choice: 25% Stun Threshold / 30% Elemental Ailment Threshold / 25% Mana Regen" },
-            { "id": "a3-vc-league", "name": "League Mechanic", "type": "league_mechanic", "reward": "League Mechanic" }
+            { "id": "a3-vc-league", "name": "League Mechanic", "type": "league_mechanic" }
           ]
         },
         {
           "id": "infested-barrens",
           "name": "Infested Barrens",
-          "prerequisites": ["venom-crypts"],
+          "prerequisites": ["jungle-ruins"],
           "tasks": [
             { "id": "a3-ib-bonus1", "name": "Find camp with Trader and chests", "type": "additional_reward", "reward": "Rare boots + high quality equipment from trader" },
-            { "id": "a3-ib-league", "name": "League Mechanic", "type": "league_mechanic", "reward": "League Mechanic" }
+            { "id": "a3-ib-wp", "name": "Activate Waypoint", "type": "waypoint" },
+            { "id": "a3-ib-league", "name": "League Mechanic", "type": "league_mechanic" }
+          ]
+        },
+        {
+          "id": "azak-bog",
+          "name": "Azak Bog",
+          "prerequisites": ["infested-barrens"],
+          "optional": true,
+          "tasks": [
+            { "id": "a3-ab-perm1", "name": "Kill Ignagduk, The Bog Witch", "type": "permanent_reward", "reward": "+30 Spirit + Uncut Spirit Gem", "tags": ["boss"] },
+            { "id": "a3-ab-bonus1", "name": "Find and start the Flame Ritual", "type": "additional_reward", "reward": "Incredible EXP spot (farm until level 34)" },
+            { "id": "a3-ab-wp", "name": "Activate Waypoint", "type": "waypoint" },
+            { "id": "a3-ab-league", "name": "League Mechanic", "type": "league_mechanic" }
+          ]
+        },
+        {
+          "id": "chimeral-wetlands",
+          "name": "Chimeral Wetlands",
+          "prerequisites": ["infested-barrens"],
+          "tasks": [
+            { "id": "a3-cw-quest1", "name": "Defeat Xyclucian, the Chimera", "type": "quest", "tags": ["boss"] },
+            { "id": "a3-cw-wp", "name": "Activate Waypoint", "type": "waypoint" },
+            { "id": "a3-cw-league", "name": "League Mechanic", "type": "league_mechanic" }
           ]
         },
         {
           "id": "jinquanis-machinarium",
-          "name": "Jinquani's Machinarium",
-          "prerequisites": ["infested-barrens"],
+          "name": "Jiquani's Machinarium",
+          "prerequisites": ["chimeral-wetlands"],
           "tasks": [
-            { "id": "a3-jm-perm1", "name": "Kill Blackjaw, The Remnant", "type": "permanent_reward", "reward": "+10% Fire Resistance" },
-            { "id": "a3-jm-league", "name": "League Mechanic", "type": "league_mechanic", "reward": "League Mechanic" }
+            { "id": "a3-jm-perm1", "name": "Kill Blackjaw, The Remnant", "type": "permanent_reward", "reward": "+10% Fire Resistance", "tags": ["boss"] },
+            { "id": "a3-jm-wp", "name": "Activate Waypoint", "type": "waypoint" },
+            { "id": "a3-jm-league", "name": "League Mechanic", "type": "league_mechanic" }
+          ]
+        },
+        {
+          "id": "jinquanis-sanctum",
+          "name": "Jiquani's Sanctum",
+          "prerequisites": ["jinquanis-machinarium"],
+          "tasks": [
+            { "id": "a3-js-quest1", "name": "Defeat Zicoatl, Warden of the Core", "type": "quest", "tags": ["boss"] },
+            { "id": "a3-js-wp", "name": "Activate Waypoint", "type": "waypoint" },
+            { "id": "a3-js-league", "name": "League Mechanic", "type": "league_mechanic" }
+          ]
+        },
+        {
+          "id": "matlan-waterways",
+          "name": "Matlan Waterways",
+          "prerequisites": ["jinquanis-sanctum"],
+          "tasks": [
+            { "id": "a3-mw-bonus1", "name": "Loot Narag's Hut", "type": "additional_reward", "reward": "Rare weapon" },
+            { "id": "a3-mw-league", "name": "League Mechanic", "type": "league_mechanic" }
+          ]
+        },
+        {
+          "id": "drowned-city",
+          "name": "The Drowned City",
+          "prerequisites": ["matlan-waterways"],
+          "tasks": [
+            { "id": "a3-dc-wp", "name": "Activate Waypoint", "type": "waypoint" },
+            { "id": "a3-dc-league", "name": "League Mechanic", "type": "league_mechanic" }
           ]
         },
         {
           "id": "molten-vault",
           "name": "Molten Vault",
-          "prerequisites": ["jinquanis-machinarium"],
+          "prerequisites": ["drowned-city"],
+          "optional": true,
           "tasks": [
-            { "id": "a3-mv-perm1", "name": "Kill Mektul, the Forgemaster & talk to Oswald in camp", "type": "permanent_reward", "reward": "Reforging Bench Unlock" },
-            { "id": "a3-mv-league", "name": "League Mechanic", "type": "league_mechanic", "reward": "League Mechanic" }
+            { "id": "a3-mv-perm1", "name": "Kill Mektul, the Forgemaster & talk to Oswald in camp", "type": "permanent_reward", "reward": "Reforging Bench Unlock + Uncut Skill Gem L10", "tags": ["boss"] },
+            { "id": "a3-mv-wp", "name": "Activate Waypoint", "type": "waypoint" },
+            { "id": "a3-mv-league", "name": "League Mechanic", "type": "league_mechanic" }
           ]
         },
         {
-          "id": "aggorat-utzaal",
-          "name": "Aggorat / Utzaal",
-          "prerequisites": ["molten-vault"],
+          "id": "apex-of-filth",
+          "name": "Apex of Filth",
+          "prerequisites": ["drowned-city"],
+          "tasks": [
+            { "id": "a3-af-quest1", "name": "Defeat Queen of Filth", "type": "quest", "tags": ["boss"] },
+            { "id": "a3-af-wp", "name": "Activate Waypoint", "type": "waypoint" },
+            { "id": "a3-af-league", "name": "League Mechanic", "type": "league_mechanic" }
+          ]
+        },
+        {
+          "id": "temple-of-kopec",
+          "name": "Temple of Kopec",
+          "prerequisites": ["apex-of-filth"],
+          "tasks": [
+            { "id": "a3-tk-quest1", "name": "Defeat Ketzuli, High Priest of the Sun", "type": "quest", "tags": ["boss"] },
+            { "id": "a3-tk-league", "name": "League Mechanic", "type": "league_mechanic" }
+          ]
+        },
+        {
+          "id": "utzaal",
+          "name": "Utzaal (Past)",
+          "prerequisites": ["temple-of-kopec"],
+          "tasks": [
+            { "id": "a3-ut-quest1", "name": "Defeat Viper Napuatzi", "type": "quest", "tags": ["boss"] },
+            { "id": "a3-ut-wp", "name": "Activate Waypoint", "type": "waypoint" },
+            { "id": "a3-ut-league", "name": "League Mechanic", "type": "league_mechanic" }
+          ]
+        },
+        {
+          "id": "aggorat",
+          "name": "Aggorat (Past)",
+          "prerequisites": ["utzaal"],
           "tasks": [
             { "id": "a3-au-perm1", "name": "Kill large enemies for Sacrificial Heart & sacrifice at altar", "type": "permanent_reward", "reward": "+2 Weapon Set Passive Skill Points" },
-            { "id": "a3-au-league", "name": "League Mechanic", "type": "league_mechanic", "reward": "League Mechanic" }
+            { "id": "a3-au-wp", "name": "Activate Waypoint", "type": "waypoint" },
+            { "id": "a3-au-league", "name": "League Mechanic", "type": "league_mechanic" }
+          ]
+        },
+        {
+          "id": "black-chambers",
+          "name": "The Black Chambers",
+          "prerequisites": ["aggorat"],
+          "tasks": [
+            { "id": "a3-bc-quest1", "name": "Defeat Doryani, Royal Thaumaturge", "type": "quest", "tags": ["boss"] },
+            { "id": "a3-bc-wp", "name": "Activate Waypoint", "type": "waypoint" },
+            { "id": "a3-bc-league", "name": "League Mechanic", "type": "league_mechanic" }
           ]
         }
       ]
@@ -341,21 +525,106 @@
       "group": "acts",
       "areas": [
         {
-          "id": "journeys-end",
-          "name": "Journey's End",
+          "id": "isle-of-kin",
+          "name": "Isle of Kin",
           "prerequisites": [],
           "tasks": [
-            { "id": "a4-je-perm1", "name": "Kill Omniphobia, Fear Manifest (complete Dark Mists first)", "type": "permanent_reward", "reward": "+2 Weapon Set Passive Skill Points" },
-            { "id": "a4-je-league", "name": "League Mechanic", "type": "league_mechanic", "reward": "League Mechanic" }
+            { "id": "a4-ik-bonus2", "name": "Kill Blind Beast", "type": "additional_reward", "reward": "Blank Greater Rune", "tags": ["boss"] },
+            { "id": "a4-ik-bonus1", "name": "Loot Fossilised Formation", "type": "additional_reward", "reward": "Lesser Jeweller's Orb" },
+            { "id": "a4-ik-wp", "name": "Activate Waypoint", "type": "waypoint" },
+            { "id": "a4-ik-league", "name": "League Mechanic", "type": "league_mechanic" }
+          ]
+        },
+        {
+          "id": "volcanic-warrens",
+          "name": "Volcanic Warrens",
+          "prerequisites": ["isle-of-kin"],
+          "tasks": [
+            { "id": "a4-vw-quest1", "name": "Defeat Krutog, Lord of Kin", "type": "quest", "tags": ["boss"] },
+            { "id": "a4-vw-bonus1", "name": "Kill Fire and Lightning Golems (last kill determines ring type)", "type": "additional_reward", "reward": "Topaz Ring or Ruby Ring (heavily weighted affixes, nearly guaranteed upgrade)" },
+            { "id": "a4-vw-wp", "name": "Activate Waypoint", "type": "waypoint" },
+            { "id": "a4-vw-league", "name": "League Mechanic", "type": "league_mechanic" }
+          ]
+        },
+        {
+          "id": "kedge-bay",
+          "name": "Kedge Bay",
+          "prerequisites": [],
+          "tasks": [
+            { "id": "a4-kb-wp", "name": "Activate Waypoint", "type": "waypoint" },
+            { "id": "a4-kb-league", "name": "League Mechanic", "type": "league_mechanic" }
+          ]
+        },
+        {
+          "id": "journeys-end",
+          "name": "Journey's End",
+          "prerequisites": ["kedge-bay"],
+          "tasks": [
+            { "id": "a4-je-quest1", "name": "Defeat Captain Hartlin", "type": "quest", "tags": ["boss"] },
+            { "id": "a4-je-perm1", "name": "Kill Omniphobia, Fear Manifest", "type": "permanent_reward", "reward": "+2 Weapon Set Passive Skill Points + Uncut Skill Gem L13", "tags": ["boss"] },
+            { "id": "a4-je-wp", "name": "Activate Waypoint", "type": "waypoint" },
+            { "id": "a4-je-league", "name": "League Mechanic", "type": "league_mechanic" }
+          ]
+        },
+        {
+          "id": "abandoned-prison",
+          "name": "Abandoned Prison",
+          "prerequisites": [],
+          "tasks": [
+            { "id": "a4-ap-perm1", "name": "Find Goddess of Justice and pick a bonus", "type": "permanent_reward", "reward": "Swapable: +30% Mana Recovery from flasks or +30% Life Recovery from Flasks" },
+            { "id": "a4-ap-wp", "name": "Activate Waypoint", "type": "waypoint" },
+            { "id": "a4-ap-league", "name": "League Mechanic", "type": "league_mechanic" }
+          ]
+        },
+        {
+          "id": "solitary-confinement",
+          "name": "Solitary Confinement",
+          "prerequisites": ["abandoned-prison"],
+          "tasks": [
+            { "id": "a4-so-quest1", "name": "Defeat The Prisoner", "type": "quest", "tags": ["boss"] },
+            { "id": "a4-so-wp", "name": "Activate Waypoint", "type": "waypoint" },
+            { "id": "a4-so-league", "name": "League Mechanic", "type": "league_mechanic" }
+          ]
+        },
+        {
+          "id": "whakapanu-island",
+          "name": "Whakapanu Island",
+          "prerequisites": [],
+          "tasks": [
+            { "id": "a4-wi-bonus1", "name": "Kill Great White One for Shark Fin", "type": "additional_reward", "reward": "Choice: Uncut Skill Gem L11 / Spirit Gem L11 / Support Gem L4", "tags": ["boss"] },
+            { "id": "a4-wi-wp", "name": "Activate Waypoint", "type": "waypoint" },
+            { "id": "a4-wi-league", "name": "League Mechanic", "type": "league_mechanic" }
+          ]
+        },
+        {
+          "id": "singing-caverns",
+          "name": "Singing Caverns",
+          "prerequisites": ["whakapanu-island"],
+          "tasks": [
+            { "id": "a4-sc-quest1", "name": "Defeat Diamora, Song of Death", "type": "quest", "tags": ["boss"] },
+            { "id": "a4-sc-bonus1", "name": "Find and loot the Beckoning Clam for a pearl", "type": "additional_reward", "reward": "Exchange pearl for an all res amulet in town" },
+            { "id": "a4-sc-wp", "name": "Activate Waypoint", "type": "waypoint" },
+            { "id": "a4-sc-league", "name": "League Mechanic", "type": "league_mechanic" }
+          ]
+        },
+        {
+          "id": "shrike-island",
+          "name": "Shrike Island",
+          "prerequisites": [],
+          "tasks": [
+            { "id": "a4-si-quest1", "name": "Defeat Scourge of the Skies", "type": "quest", "tags": ["boss"] },
+            { "id": "a4-si-wp", "name": "Activate Waypoint", "type": "waypoint" },
+            { "id": "a4-si-league", "name": "League Mechanic", "type": "league_mechanic" }
           ]
         },
         {
           "id": "eye-of-hinekora",
-          "name": "Eye of Hinekora - The Silent Hall",
-          "prerequisites": ["journeys-end"],
+          "name": "Eye of Hinekora",
+          "prerequisites": ["shrike-island"],
           "tasks": [
-            { "id": "a4-eh-perm1", "name": "Press F to pay Respect", "type": "permanent_reward", "reward": "+5% Maximum Mana" },
-            { "id": "a4-eh-league", "name": "League Mechanic", "type": "league_mechanic", "reward": "League Mechanic" }
+            { "id": "a4-eh-perm1", "name": "Press F to pay Respect in the Silent Hall", "type": "permanent_reward", "reward": "+5% Maximum Mana" },
+            { "id": "a4-eh-wp", "name": "Activate Waypoint", "type": "waypoint" },
+            { "id": "a4-eh-league", "name": "League Mechanic", "type": "league_mechanic" }
           ]
         },
         {
@@ -364,7 +633,8 @@
           "prerequisites": ["eye-of-hinekora"],
           "tasks": [
             { "id": "a4-hd-perm1", "name": "Complete all 3 Trials for 3 Tattoos & offer them", "type": "permanent_reward", "reward": "Permanent Choice: Tawhoa (+5 dex or +5 lightning res), Tasalio (+5 int or +5 cold res), Ngamahu (+5 str or +5 fire res)" },
-            { "id": "a4-hd-league", "name": "League Mechanic", "type": "league_mechanic", "reward": "League Mechanic" }
+            { "id": "a4-hd-wp", "name": "Activate Waypoint", "type": "waypoint" },
+            { "id": "a4-hd-league", "name": "League Mechanic", "type": "league_mechanic" }
           ]
         },
         {
@@ -372,54 +642,48 @@
           "name": "Trail of the Ancestors",
           "prerequisites": ["halls-of-the-dead"],
           "tasks": [
-            { "id": "a4-ta-perm1", "name": "Kill Yama The White", "type": "permanent_reward", "reward": "+2 Weapon Set Passive Skill Points" },
-            { "id": "a4-ta-league", "name": "League Mechanic", "type": "league_mechanic", "reward": "League Mechanic" }
-          ]
-        },
-        {
-          "id": "abandoned-prison",
-          "name": "Abandoned Prison",
-          "prerequisites": ["trail-of-the-ancestors"],
-          "tasks": [
-            { "id": "a4-ap-perm1", "name": "Find Goddess of Justice and pick a bonus", "type": "permanent_reward", "reward": "Swapable: +30% Mana Recovery from flasks or +30% Life Recovery from Flasks" },
-            { "id": "a4-ap-league", "name": "League Mechanic", "type": "league_mechanic", "reward": "League Mechanic" }
-          ]
-        },
-        {
-          "id": "isle-of-kin",
-          "name": "Isle of Kin",
-          "prerequisites": ["abandoned-prison"],
-          "tasks": [
-            { "id": "a4-ik-bonus1", "name": "Search outer walls of map and loot the interactable", "type": "additional_reward", "reward": "Lesser Jeweller's Orb" },
-            { "id": "a4-ik-bonus2", "name": "Kill Blind Beast", "type": "additional_reward", "reward": "Greater Rune" },
-            { "id": "a4-ik-league", "name": "League Mechanic", "type": "league_mechanic", "reward": "League Mechanic" }
-          ]
-        },
-        {
-          "id": "volcanic-warrens",
-          "name": "Isle of Kin - Volcanic Warrens",
-          "prerequisites": ["isle-of-kin"],
-          "tasks": [
-            { "id": "a4-vw-bonus1", "name": "Kill Fire and Lightning Golems (last kill determines ring type)", "type": "additional_reward", "reward": "Topaz Ring or Ruby Ring (heavily weighted affixes, nearly guaranteed upgrade)" },
-            { "id": "a4-vw-league", "name": "League Mechanic", "type": "league_mechanic", "reward": "League Mechanic" }
-          ]
-        },
-        {
-          "id": "singing-caverns",
-          "name": "Whakapanu Island - Singing Caverns",
-          "prerequisites": ["volcanic-warrens"],
-          "tasks": [
-            { "id": "a4-sc-bonus1", "name": "Find and loot the Beckoning Clam for a pearl", "type": "additional_reward", "reward": "Exchange pearl for an all res amulet in town" },
-            { "id": "a4-sc-league", "name": "League Mechanic", "type": "league_mechanic", "reward": "League Mechanic" }
+            { "id": "a4-ta-perm1", "name": "Kill Yama The White", "type": "permanent_reward", "reward": "+2 Weapon Set Passive Skill Points", "tags": ["boss"] },
+            { "id": "a4-ta-league", "name": "League Mechanic", "type": "league_mechanic" }
           ]
         },
         {
           "id": "arastas",
           "name": "Arastas",
-          "prerequisites": ["singing-caverns"],
+          "prerequisites": [],
           "tasks": [
-            { "id": "a4-ar-bonus1", "name": "Find Bells and interact with them", "type": "additional_reward", "reward": "Bell 1: 3 Exalted Orbs, Bell 2: 3 Regal Orbs" },
-            { "id": "a4-ar-league", "name": "League Mechanic", "type": "league_mechanic", "reward": "League Mechanic" }
+            { "id": "a4-ar-quest1", "name": "Defeat Torvian, Hand of the Saviour", "type": "quest", "tags": ["boss"] },
+            { "id": "a4-ar-bonus1", "name": "Find Bells and interact with them", "type": "additional_reward", "reward": "Morning Bell: 3 Regal Orbs, Evening Bell: 3 Exalted Orbs" },
+            { "id": "a4-ar-wp", "name": "Activate Waypoint", "type": "waypoint" },
+            { "id": "a4-ar-league", "name": "League Mechanic", "type": "league_mechanic" }
+          ]
+        },
+        {
+          "id": "the-excavation",
+          "name": "The Excavation",
+          "prerequisites": ["arastas"],
+          "tasks": [
+            { "id": "a4-ex-quest1", "name": "Defeat Benedictus, First Herald", "type": "quest", "tags": ["boss"] },
+            { "id": "a4-ex-wp", "name": "Activate Waypoint", "type": "waypoint" },
+            { "id": "a4-ex-league", "name": "League Mechanic", "type": "league_mechanic" }
+          ]
+        },
+        {
+          "id": "ngakanu",
+          "name": "Ngakanu",
+          "prerequisites": [],
+          "tasks": [
+            { "id": "a4-ng-wp", "name": "Activate Waypoint", "type": "waypoint" },
+            { "id": "a4-ng-league", "name": "League Mechanic", "type": "league_mechanic" }
+          ]
+        },
+        {
+          "id": "heart-of-the-tribe",
+          "name": "Heart of the Tribe",
+          "prerequisites": ["ngakanu"],
+          "tasks": [
+            { "id": "a4-ht-quest1", "name": "Defeat Tavakai, the Chieftain", "type": "quest", "tags": ["boss"] },
+            { "id": "a4-ht-wp", "name": "Activate Waypoint", "type": "waypoint" },
+            { "id": "a4-ht-league", "name": "League Mechanic", "type": "league_mechanic" }
           ]
         }
       ]
