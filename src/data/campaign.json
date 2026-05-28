@@ -10,101 +10,62 @@
           "name": "Clearfell",
           "prerequisites": [],
           "tasks": [
-            { "id": "a1-cf-perm1", "name": "Kill Beira of the Rotten Pack", "type": "permanent_reward", "reward": "+10% Cold Resistance" },
+            { "id": "a1-cf-perm1", "name": "Kill Beira of the Rotten Pack", "type": "permanent_reward", "reward": "+10% Cold Resistance", "tags": ["boss"] },
             { "id": "a1-cf-bonus1", "name": "Find and loot Mysterious Campsite", "type": "additional_reward", "reward": "Uncut Skill Gem L1" },
-            { "id": "a1-cf-league", "name": "League Mechanic", "type": "league_mechanic", "reward": "League Mechanic" }
+            { "id": "a1-cf-wp", "name": "Activate Waypoint", "type": "waypoint" },
+            { "id": "a1-cf-league", "name": "League Mechanic", "type": "league_mechanic" }
           ]
         },
         {
           "id": "mud-burrow",
           "name": "Mud Burrow",
           "prerequisites": ["clearfell"],
+          "optional": true,
           "tasks": [
-            { "id": "a1-mb-bonus1", "name": "Kill The Devourer & report back", "type": "additional_reward", "reward": "Uncut Skill Gem L2 + Uncut Support Gem L1 + 100 Gold" },
-            { "id": "a1-mb-league", "name": "League Mechanic", "type": "league_mechanic", "reward": "League Mechanic" }
+            { "id": "a1-mb-bonus1", "name": "Kill The Devourer & report back", "type": "additional_reward", "reward": "Uncut Skill Gem L2 + Uncut Support Gem L1 + 100 Gold", "tags": ["boss"] },
+            { "id": "a1-mb-league", "name": "League Mechanic", "type": "league_mechanic" }
           ]
         },
         {
           "id": "the-grelwood",
           "name": "The Grelwood",
-          "prerequisites": ["mud-burrow"],
+          "prerequisites": ["clearfell"],
           "tasks": [
-            { "id": "a1-gw-bonus1", "name": "Loot Aregane's Hut and slay the Rare that spawns", "type": "additional_reward", "reward": "Medium Life and Mana Flask + Uncut Support Gem L1" },
-            { "id": "a1-gw-league", "name": "League Mechanic", "type": "league_mechanic", "reward": "League Mechanic" }
-          ]
-        },
-        {
-          "id": "hunting-grounds",
-          "name": "Hunting Grounds",
-          "prerequisites": ["the-grelwood"],
-          "tasks": [
-            { "id": "a1-hg-perm1", "name": "Kill Cowbell", "type": "permanent_reward", "reward": "+2 Weapon Set Passive Skill Points" },
-            { "id": "a1-hg-league", "name": "League Mechanic", "type": "league_mechanic", "reward": "League Mechanic" }
-          ]
-        },
-        {
-          "id": "freythorn",
-          "name": "Freythorn",
-          "prerequisites": ["hunting-grounds"],
-          "tasks": [
-            { "id": "a1-ft-perm1", "name": "Kill The King In The Mist", "type": "permanent_reward", "reward": "+30 Spirit" },
-            { "id": "a1-ft-league", "name": "League Mechanic", "type": "league_mechanic", "reward": "League Mechanic" }
+            { "id": "a1-gw-bonus1", "name": "Loot Areagne's Hut and slay the Rare that spawns", "type": "additional_reward", "reward": "Medium Life and Mana Flask + Uncut Support Gem L1" },
+            { "id": "a1-gw-wp", "name": "Activate Waypoint", "type": "waypoint" },
+            { "id": "a1-gw-league", "name": "League Mechanic", "type": "league_mechanic" }
           ]
         },
         {
           "id": "the-red-vale",
           "name": "The Red Vale",
-          "prerequisites": ["freythorn"],
+          "prerequisites": ["the-grelwood"],
           "tasks": [
+            { "id": "a1-rv-quest1", "name": "Defeat The Rust King", "type": "quest", "tags": ["boss"] },
             { "id": "a1-rv-bonus1", "name": "Loot refined weapon racks", "type": "additional_reward", "reward": "T2 Martial weapons" },
-            { "id": "a1-rv-league", "name": "League Mechanic", "type": "league_mechanic", "reward": "League Mechanic" }
+            { "id": "a1-rv-wp", "name": "Activate Waypoint", "type": "waypoint" },
+            { "id": "a1-rv-league", "name": "League Mechanic", "type": "league_mechanic" }
           ]
         },
         {
           "id": "the-grim-tangle",
           "name": "The Grim Tangle",
-          "prerequisites": ["the-red-vale"],
+          "prerequisites": ["the-grelwood"],
           "tasks": [
-            { "id": "a1-gt-bonus1", "name": "Kill The Rotten Druid (optional)", "type": "additional_reward", "reward": "Uncut Support Gem L1" },
-            { "id": "a1-gt-league", "name": "League Mechanic", "type": "league_mechanic", "reward": "League Mechanic" }
-          ]
-        },
-        {
-          "id": "ogham-farmlands",
-          "name": "Ogham Farmlands",
-          "prerequisites": ["the-grim-tangle"],
-          "tasks": [
-            { "id": "a1-of-perm1", "name": "Find Una's Lute & deliver it", "type": "permanent_reward", "reward": "+2 Weapon Set Passive Skill Points" },
-            { "id": "a1-of-bonus1", "name": "Kill the monster ambushing you", "type": "additional_reward", "reward": "Uncut Skill Gem L4" },
-            { "id": "a1-of-league", "name": "League Mechanic", "type": "league_mechanic", "reward": "League Mechanic" }
-          ]
-        },
-        {
-          "id": "ogham-village",
-          "name": "Ogham Village",
-          "prerequisites": ["ogham-farmlands"],
-          "tasks": [
-            { "id": "a1-ov-perm1", "name": "Find Smithing Tools & deliver them", "type": "permanent_reward", "reward": "Salvaging Bench Unlock" },
-            { "id": "a1-ov-bonus1", "name": "Loot the Blacksmith's chest next to the Smithing Tools", "type": "additional_reward", "reward": "Artificer's Orb + Blank Lesser Rune" },
-            { "id": "a1-ov-league", "name": "League Mechanic", "type": "league_mechanic", "reward": "League Mechanic" }
-          ]
-        },
-        {
-          "id": "ogham-manor",
-          "name": "Ogham Manor",
-          "prerequisites": ["ogham-village"],
-          "tasks": [
-            { "id": "a1-om-perm1", "name": "Kill Candlemass, The Living Rite", "type": "permanent_reward", "reward": "+20 Maximum Life" },
-            { "id": "a1-om-league", "name": "League Mechanic", "type": "league_mechanic", "reward": "League Mechanic" }
+            { "id": "a1-gt-bonus1", "name": "Kill Ervig, Rotted Druid", "type": "additional_reward", "reward": "Uncut Support Gem L1", "tags": ["boss"] },
+            { "id": "a1-gt-wp", "name": "Activate Waypoint", "type": "waypoint" },
+            { "id": "a1-gt-league", "name": "League Mechanic", "type": "league_mechanic" }
           ]
         },
         {
           "id": "cemetery",
           "name": "Cemetery of the Eternals",
-          "prerequisites": ["ogham-manor"],
+          "prerequisites": ["the-grim-tangle"],
           "tasks": [
+            { "id": "a1-ce-quest1", "name": "Defeat Lachlann of Endless Lament", "type": "quest", "tags": ["boss"] },
             { "id": "a1-ce-bonus1", "name": "Loot the grave found in the Cemetery", "type": "additional_reward", "reward": "50/50 chance: Iron Ring or Lazuli Ring" },
-            { "id": "a1-ce-league", "name": "League Mechanic", "type": "league_mechanic", "reward": "League Mechanic" }
+            { "id": "a1-ce-wp", "name": "Activate Waypoint", "type": "waypoint" },
+            { "id": "a1-ce-league", "name": "League Mechanic", "type": "league_mechanic" }
           ]
         },
         {
@@ -112,26 +73,87 @@
           "name": "Tomb of the Consort",
           "prerequisites": ["cemetery"],
           "tasks": [
+            { "id": "a1-tc-quest1", "name": "Defeat Asinia, Praetor Consort", "type": "quest", "tags": ["boss"] },
             { "id": "a1-tc-bonus1", "name": "Loot Haunted Treasure and slay the rare that spawns", "type": "additional_reward", "reward": "Rare item + Uncut Support Gem L1" },
-            { "id": "a1-tc-league", "name": "League Mechanic", "type": "league_mechanic", "reward": "League Mechanic" }
+            { "id": "a1-tc-wp", "name": "Activate Waypoint", "type": "waypoint" },
+            { "id": "a1-tc-league", "name": "League Mechanic", "type": "league_mechanic" }
           ]
         },
         {
-          "id": "dryadic-ritual",
-          "name": "Dryadic Ritual",
-          "prerequisites": ["tomb-of-the-consort"],
+          "id": "mausoleum-of-the-praetor",
+          "name": "Mausoleum of the Praetor",
+          "prerequisites": ["cemetery"],
           "tasks": [
-            { "id": "a1-dr-bonus1", "name": "Kill the dryads", "type": "additional_reward", "reward": "Uncut Support Gem L1" },
-            { "id": "a1-dr-league", "name": "League Mechanic", "type": "league_mechanic", "reward": "League Mechanic" }
+            { "id": "a1-mp-quest1", "name": "Defeat Draven, Eternal Praetor", "type": "quest", "tags": ["boss"] },
+            { "id": "a1-mp-bonus1", "name": "Loot Forgotten Riches", "type": "additional_reward", "reward": "Gold + Rare chest" },
+            { "id": "a1-mp-wp", "name": "Activate Waypoint", "type": "waypoint" },
+            { "id": "a1-mp-league", "name": "League Mechanic", "type": "league_mechanic" }
           ]
         },
         {
-          "id": "the-gallows",
-          "name": "The Gallows",
-          "prerequisites": ["dryadic-ritual"],
+          "id": "hunting-grounds",
+          "name": "The Hunting Grounds",
+          "prerequisites": ["cemetery"],
           "tasks": [
-            { "id": "a1-tg-bonus1", "name": "Loot the hanged corpse", "type": "additional_reward", "reward": "Uncut Support Gem L1" },
-            { "id": "a1-tg-league", "name": "League Mechanic", "type": "league_mechanic", "reward": "League Mechanic" }
+            { "id": "a1-hg-perm1", "name": "Kill The Crowbell", "type": "permanent_reward", "reward": "+2 Weapon Set Passive Skill Points", "tags": ["boss"] },
+            { "id": "a1-dr-bonus1", "name": "Complete the Dryadic Ritual", "type": "additional_reward", "reward": "Uncut Support Gem L1" },
+            { "id": "a1-hg-wp", "name": "Activate Waypoint", "type": "waypoint" },
+            { "id": "a1-hg-league", "name": "League Mechanic", "type": "league_mechanic" }
+          ]
+        },
+        {
+          "id": "freythorn",
+          "name": "Freythorn",
+          "prerequisites": ["hunting-grounds"],
+          "optional": true,
+          "tasks": [
+            { "id": "a1-ft-perm1", "name": "Kill The King In The Mist", "type": "permanent_reward", "reward": "+30 Spirit", "tags": ["boss"] },
+            { "id": "a1-ft-wp", "name": "Activate Waypoint", "type": "waypoint" },
+            { "id": "a1-ft-league", "name": "League Mechanic", "type": "league_mechanic" }
+          ]
+        },
+        {
+          "id": "ogham-farmlands",
+          "name": "Ogham Farmlands",
+          "prerequisites": ["hunting-grounds"],
+          "tasks": [
+            { "id": "a1-of-perm1", "name": "Find Una's Lute & deliver it", "type": "permanent_reward", "reward": "+2 Weapon Set Passive Skill Points" },
+            { "id": "a1-of-bonus1", "name": "Kill the monster ambushing you", "type": "additional_reward", "reward": "Uncut Skill Gem L4" },
+            { "id": "a1-of-wp", "name": "Activate Waypoint", "type": "waypoint" },
+            { "id": "a1-of-league", "name": "League Mechanic", "type": "league_mechanic" }
+          ]
+        },
+        {
+          "id": "ogham-village",
+          "name": "Ogham Village",
+          "prerequisites": ["hunting-grounds"],
+          "tasks": [
+            { "id": "a1-ov-quest1", "name": "Defeat The Executioner", "type": "quest", "tags": ["boss"] },
+            { "id": "a1-ov-perm1", "name": "Find Smithing Tools & deliver them", "type": "permanent_reward", "reward": "Salvaging Bench Unlock" },
+            { "id": "a1-ov-bonus1", "name": "Loot the Blacksmith's chest next to the Smithing Tools", "type": "additional_reward", "reward": "Artificer's Orb + Blank Lesser Rune" },
+            { "id": "a1-ov-wp", "name": "Activate Waypoint", "type": "waypoint" },
+            { "id": "a1-ov-league", "name": "League Mechanic", "type": "league_mechanic" }
+          ]
+        },
+        {
+          "id": "manor-ramparts",
+          "name": "The Manor Ramparts",
+          "prerequisites": ["ogham-village"],
+          "tasks": [
+            { "id": "a1-tg-bonus1", "name": "Loot the hanged corpse at The Gallows", "type": "additional_reward", "reward": "Uncut Support Gem L1" },
+            { "id": "a1-mr-wp", "name": "Activate Waypoint", "type": "waypoint" },
+            { "id": "a1-mr-league", "name": "League Mechanic", "type": "league_mechanic" }
+          ]
+        },
+        {
+          "id": "ogham-manor",
+          "name": "Oghman Manor",
+          "prerequisites": ["manor-ramparts"],
+          "tasks": [
+            { "id": "a1-om-quest1", "name": "Defeat Count Geonor", "type": "quest", "tags": ["boss"] },
+            { "id": "a1-om-perm1", "name": "Kill Candlemass, The Living Rite", "type": "permanent_reward", "reward": "+20 Maximum Life", "tags": ["boss"] },
+            { "id": "a1-om-wp", "name": "Activate Waypoint", "type": "waypoint" },
+            { "id": "a1-om-league", "name": "League Mechanic", "type": "league_mechanic" }
           ]
         }
       ]

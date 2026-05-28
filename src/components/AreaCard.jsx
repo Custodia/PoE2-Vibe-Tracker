@@ -39,7 +39,9 @@ export default function AreaCard({ area }) {
           ? 'border-indigo-500 bg-gray-800/80 shadow-lg shadow-indigo-500/10 z-10'
           : permanentDone
             ? 'border-gray-700/50 bg-gray-800/40'
-            : 'border-gray-700 bg-gray-800'
+            : area.optional
+              ? 'border-dashed border-yellow-700/60 bg-gray-800'
+              : 'border-gray-700 bg-gray-800'
       }`}
     >
       <div
@@ -64,6 +66,11 @@ export default function AreaCard({ area }) {
         </button>
         <h3 className={`flex-1 font-semibold text-sm ${permanentDone ? 'text-gray-500' : 'text-gray-100'}`}>
           {area.name}
+          {area.optional && (
+            <span className="ml-2 text-[10px] font-normal text-yellow-600 bg-yellow-900/30 px-1.5 py-0.5 rounded">
+              Optional
+            </span>
+          )}
         </h3>
         {!permanentDone && (
           <button

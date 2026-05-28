@@ -20,6 +20,14 @@ const typeLabels = {
   league_mechanic: 'League',
 };
 
+const tagBadgeColors = {
+  boss: 'bg-red-800 text-red-100',
+};
+
+const tagLabels = {
+  boss: 'Boss',
+};
+
 export default function TaskItem({ task }) {
   const completed = useCampaignStore((s) => s.completedTasks.has(task.id));
   const toggleTask = useCampaignStore((s) => s.toggleTask);
@@ -41,9 +49,19 @@ export default function TaskItem({ task }) {
           <span className={`block text-xs mt-0.5 ${completed ? 'text-gray-600' : 'text-gray-400'}`}>{task.name}</span>
         )}
       </span>
-      <span className={`text-[10px] font-semibold uppercase tracking-wider px-1.5 py-0.5 rounded ${badgeColor}`}>
-        {label}
-      </span>
+      <div className="flex items-center gap-1 shrink-0">
+        <span className={`text-[10px] font-semibold uppercase tracking-wider px-1.5 py-0.5 rounded ${badgeColor}`}>
+          {label}
+        </span>
+        {(task.tags || []).map((tag) => (
+          <span
+            key={tag}
+            className={`text-[10px] font-semibold uppercase tracking-wider px-1.5 py-0.5 rounded ${tagBadgeColors[tag] || 'bg-gray-600 text-gray-200'}`}
+          >
+            {tagLabels[tag] || tag}
+          </span>
+        ))}
+      </div>
     </label>
   );
 }

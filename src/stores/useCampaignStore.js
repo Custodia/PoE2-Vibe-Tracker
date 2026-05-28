@@ -48,13 +48,15 @@ function reconcileAreaOrder(savedOrder, defaultOrder) {
       reconciled[actId] = defaultIds;
       continue;
     }
-    const validIds = new Set(defaultIds);
-    const kept = savedIds.filter((id) => validIds.has(id));
-    const keptSet = new Set(kept);
-    for (const id of defaultIds) {
-      if (!keptSet.has(id)) kept.push(id);
+    const defaultSet = new Set(defaultIds);
+    const savedSet = new Set(savedIds);
+    const hasAdded = defaultIds.some((id) => !savedSet.has(id));
+    const hasRemoved = savedIds.some((id) => !defaultSet.has(id));
+    if (hasAdded || hasRemoved) {
+      reconciled[actId] = defaultIds;
+      continue;
     }
-    reconciled[actId] = kept;
+    reconciled[actId] = savedIds;
   }
   return reconciled;
 }
