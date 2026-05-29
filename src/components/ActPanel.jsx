@@ -53,8 +53,9 @@ export default function ActPanel({ act }) {
   }
 
   const completedTasks = useCampaignStore((s) => s.completedTasks);
+  const hiddenTaskTypes = useCampaignStore((s) => s.hiddenTaskTypes);
 
-  const allTasks = act.areas.flatMap((a) => a.tasks);
+  const allTasks = act.areas.flatMap((a) => a.tasks).filter((t) => !hiddenTaskTypes.has(t.type));
   const permTasks = allTasks.filter((t) => t.type === 'permanent_reward');
   const permDone = permTasks.filter((t) => completedTasks.has(t.id)).length;
   const permPct = permTasks.length === 0 ? 0 : Math.round((permDone / permTasks.length) * 100);

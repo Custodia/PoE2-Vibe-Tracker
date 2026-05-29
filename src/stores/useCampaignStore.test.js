@@ -22,6 +22,10 @@ describe('useCampaignStore', () => {
     // Reset store to initial state
     act(() => {
       useCampaignStore.getState().resetProgress();
+      // Clear any hidden task types (resetProgress preserves them by design)
+      for (const type of useCampaignStore.getState().hiddenTaskTypes) {
+        useCampaignStore.getState().toggleHiddenTaskType(type);
+      }
     });
   });
 
@@ -150,8 +154,8 @@ describe('useCampaignStore', () => {
         useCampaignStore.getState().resetProgress();
       });
       const { areaOrder } = useCampaignStore.getState();
-      // Default order has clearfell-encampment first
-      expect(areaOrder.act1[0]).toBe('clearfell-encampment');
+      // Default order has clearfell first
+      expect(areaOrder.act1[0]).toBe('clearfell');
     });
 
     it('persists reset state to localStorage', () => {
@@ -163,6 +167,55 @@ describe('useCampaignStore', () => {
       });
       const saved = JSON.parse(localStorageMock.setItem.mock.calls.at(-1)[1]);
       expect(saved.completedTasks).toEqual([]);
+    });
+
+    it('preserves hiddenTaskTypes when resetting', () => {
+      act(() => {
+        useCampaignStore.getState().toggleHiddenTaskType('waypoint');
+      });
+      act(() => {
+        useCampaignStore.getState().resetProgress();
+      });
+      expect(useCampaignStore.getState().hiddenTaskTypes.has('waypoint')).toBe(true);
+      const saved = JSON.parse(localStorageMock.setItem.mock.calls.at(-1)[1]);
+      expect(saved.hiddenTaskTypes).toContain('waypoint');
+    });
+  });
+
+  describe('toggleHiddenTaskType', () => {
+    it('adds a task type to hiddenTaskTypes', () => {
+      act(() => {
+        useCampaignStore.getState().toggleHiddenTaskType('waypoint');
+      });
+      expect(useCampaignStore.getState().hiddenTaskTypes.has('waypoint')).toBe(true);
+    });
+
+    it('removes a task type when toggled again', () => {
+      act(() => {
+        useCampaignStore.getState().toggleHiddenTaskType('waypoint');
+      });
+      act(() => {
+        useCampaignStore.getState().toggleHiddenTaskType('waypoint');
+      });
+      expect(useCampaignStore.getState().hiddenTaskTypes.has('waypoint')).toBe(false);
+    });
+
+    it('supports multiple hidden types simultaneously', () => {
+      act(() => {
+        useCampaignStore.getState().toggleHiddenTaskType('waypoint');
+        useCampaignStore.getState().toggleHiddenTaskType('league_mechanic');
+      });
+      const { hiddenTaskTypes } = useCampaignStore.getState();
+      expect(hiddenTaskTypes.has('waypoint')).toBe(true);
+      expect(hiddenTaskTypes.has('league_mechanic')).toBe(true);
+    });
+
+    it('persists to localStorage', () => {
+      act(() => {
+        useCampaignStore.getState().toggleHiddenTaskType('additional_reward');
+      });
+      const saved = JSON.parse(localStorageMock.setItem.mock.calls.at(-1)[1]);
+      expect(saved.hiddenTaskTypes).toContain('additional_reward');
     });
   });
 });

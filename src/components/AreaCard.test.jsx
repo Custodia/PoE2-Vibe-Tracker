@@ -33,6 +33,9 @@ describe('AreaCard', () => {
   beforeEach(() => {
     act(() => {
       useCampaignStore.getState().resetProgress();
+      for (const type of useCampaignStore.getState().hiddenTaskTypes) {
+        useCampaignStore.getState().toggleHiddenTaskType(type);
+      }
     });
   });
 
@@ -107,5 +110,71 @@ describe('AreaCard', () => {
     renderAreaCard(testArea);
     expect(screen.getByText('Task One')).toBeInTheDocument();
     expect(screen.getByText('Task Two')).toBeInTheDocument();
+  });
+
+  describe('hidden task types', () => {
+    it('hides tasks of a hidden type', () => {
+      act(() => {
+        useCampaignStore.getState().toggleHiddenTaskType('waypoint');
+      });
+      renderAreaCard(testArea);
+      expect(screen.getByText('Task One')).toBeInTheDocument();
+      expect(screen.queryByText('Task Two')).not.toBeInTheDocument();
+      expect(screen.getByText('Task Three')).toBeInTheDocument();
+    });
+
+    it('updates progress badge to reflect only visible tasks', () => {
+      act(() => {
+        useCampaignStore.getState().toggleHiddenTaskType('waypoint');
+      });
+      renderAreaCard(testArea);
+      expect(screen.getByText('0/2')).toBeInTheDocument();
+    });
+
+    it('shows empty state when all tasks are hidden', () => {
+      const waypointOnlyArea = {
+        id: 'wp-area',
+        name: 'Waypoint Area',
+        prerequisites: [],
+        tasks: [
+          { id: 'wp-1', name: 'WP One', type: 'waypoint' },
+          { id: 'wp-2', name: 'WP Two', type: 'waypoint' },
+        ],
+      };
+      act(() => {
+        useCampaignStore.getState().toggleHiddenTaskType('waypoint');
+      });
+      renderAreaCard(waypointOnlyArea);
+      expect(screen.getByText('All content here has been hidden by your settings')).toBeInTheDocument();
+    });
+
+    it('hides "Check all" button when all tasks are hidden', () => {
+      const waypointOnlyArea = {
+        id: 'wp-area',
+        name: 'Waypoint Area',
+        prerequisites: [],
+        tasks: [{ id: 'wp-1', name: 'WP One', type: 'waypoint' }],
+      };
+      act(() => {
+        useCampaignStore.getState().toggleHiddenTaskType('waypoint');
+      });
+      renderAreaCard(waypointOnlyArea);
+      expect(screen.queryByText('Check all')).not.toBeInTheDocument();
+    });
+
+    it('"Check all" only completes visible tasks', async () => {
+      const user = userEvent.setup();
+      act(() => {
+        useCampaignStore.getState().toggleHiddenTaskType('waypoint');
+      });
+      renderAreaCard(testArea);
+
+      await user.click(screen.getByText('Check all'));
+
+      const { completedTasks } = useCampaignStore.getState();
+      expect(completedTasks.has('task-1')).toBe(true);
+      expect(completedTasks.has('task-2')).toBe(false);
+      expect(completedTasks.has('task-3')).toBe(true);
+    });
   });
 });

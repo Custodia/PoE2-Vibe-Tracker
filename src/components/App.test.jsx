@@ -75,24 +75,49 @@ describe('App', () => {
     render(<App />);
 
     // Should show Act 1 content by default
-    expect(screen.getByText('Clearfell Encampment')).toBeInTheDocument();
+    expect(screen.getByText('Clearfell')).toBeInTheDocument();
 
     // Click Act 2 tab
     await user.click(screen.getByRole('button', { name: /Act 2/ }));
     expect(screen.getByText('Vastiri Outskirts')).toBeInTheDocument();
-    expect(screen.queryByText('Clearfell Encampment')).not.toBeInTheDocument();
+    expect(screen.queryByText('Clearfell')).not.toBeInTheDocument();
   });
 
   it('shows Act 1 areas by default', () => {
     render(<App />);
-    expect(screen.getByText('Clearfell Encampment')).toBeInTheDocument();
+    expect(screen.getByText('Clearfell')).toBeInTheDocument();
     expect(screen.getByText('The Grelwood')).toBeInTheDocument();
   });
 
-  it('displays progress percentage', () => {
+  it('displays progress counts', () => {
     render(<App />);
-    // The progress bar shows "N/M (X%)" format — match the full pattern
-    // to distinguish from area card badges which only show "N/M"
-    expect(screen.getByText(/0\/18\s*\(0%\)/)).toBeInTheDocument();
+    // The "All" progress bar shows "0/N" for Act 1's total tasks
+    expect(screen.getByText('0/51')).toBeInTheDocument();
+  });
+
+  it('renders the Settings button', () => {
+    render(<App />);
+    expect(screen.getByLabelText('Settings')).toBeInTheDocument();
+  });
+
+  it('opens settings modal when Settings is clicked', async () => {
+    const user = userEvent.setup();
+    render(<App />);
+
+    await user.click(screen.getByLabelText('Settings'));
+    expect(screen.getByText('Settings')).toBeInTheDocument();
+    expect(screen.getByText('Hide Waypoints')).toBeInTheDocument();
+  });
+
+  it('closes settings modal when backdrop is clicked', async () => {
+    const user = userEvent.setup();
+    render(<App />);
+
+    await user.click(screen.getByLabelText('Settings'));
+    expect(screen.getByText('Hide Waypoints')).toBeInTheDocument();
+
+    // Click the backdrop (the fixed overlay div)
+    await user.click(screen.getByText('Hide Waypoints').closest('[class*="fixed"]'));
+    expect(screen.queryByText('Hide Waypoints')).not.toBeInTheDocument();
   });
 });

@@ -3,15 +3,14 @@ import useCampaignStore from '../stores/useCampaignStore';
 
 export default function ActTabs({ acts, activeActId, onSelectAct }) {
   const completedTasks = useCampaignStore((s) => s.completedTasks);
+  const hiddenTaskTypes = useCampaignStore((s) => s.hiddenTaskTypes);
 
   return (
     <div className="flex gap-1 border-b border-gray-700 mb-6 overflow-x-auto scrollbar-hide">
       {acts.map((act, i) => {
-        const total = act.areas.reduce((s, a) => s + a.tasks.length, 0);
-        const done = act.areas.reduce(
-          (s, a) => s + a.tasks.filter((t) => completedTasks.has(t.id)).length,
-          0
-        );
+        const visibleTasks = act.areas.flatMap((a) => a.tasks).filter((t) => !hiddenTaskTypes.has(t.type));
+        const total = visibleTasks.length;
+        const done = visibleTasks.filter((t) => completedTasks.has(t.id)).length;
         const isActive = act.id === activeActId;
         const allDone = total > 0 && done === total;
         const prevGroup = i > 0 ? acts[i - 1].group : null;

@@ -7,10 +7,12 @@ import useCampaignStore from '../stores/useCampaignStore';
 export default function AreaCard({ area }) {
   const completedTasks = useCampaignStore((s) => s.completedTasks);
   const completeAllTasks = useCampaignStore((s) => s.completeAllTasks);
-  const permTasks = area.tasks.filter((t) => t.type === 'permanent_reward');
+  const hiddenTaskTypes = useCampaignStore((s) => s.hiddenTaskTypes);
+  const visibleTasks = area.tasks.filter((t) => !hiddenTaskTypes.has(t.type));
+  const permTasks = visibleTasks.filter((t) => t.type === 'permanent_reward');
   const permDone = permTasks.filter((t) => completedTasks.has(t.id)).length;
-  const doneCount = area.tasks.filter((t) => completedTasks.has(t.id)).length;
-  const totalCount = area.tasks.length;
+  const doneCount = visibleTasks.filter((t) => completedTasks.has(t.id)).length;
+  const totalCount = visibleTasks.length;
   const permanentDone = permTasks.length > 0 ? permDone === permTasks.length : totalCount > 0 && doneCount === totalCount;
   const allDone = totalCount > 0 && doneCount === totalCount;
   const [manualCollapse, setManualCollapse] = useState(null);
@@ -72,9 +74,9 @@ export default function AreaCard({ area }) {
             </span>
           )}
         </h3>
-        {!permanentDone && (
+        {!permanentDone && visibleTasks.length > 0 && (
           <button
-            onClick={() => completeAllTasks(area.tasks.map((t) => t.id))}
+            onClick={() => completeAllTasks(visibleTasks.map((t) => t.id))}
             className="text-[10px] text-gray-500 hover:text-gray-200 px-1.5 py-0.5 rounded border border-gray-700 hover:border-gray-500 transition-colors"
           >
             Check all
@@ -96,9 +98,15 @@ export default function AreaCard({ area }) {
       </div>
       {!collapsed && (
         <div className="px-2 py-2 space-y-0.5">
-          {area.tasks.map((task) => (
-            <TaskItem key={task.id} task={task} />
-          ))}
+          {visibleTasks.length === 0 ? (
+            <p className="text-sm text-gray-500 italic py-4 text-center">
+              All content here has been hidden by your settings
+            </p>
+          ) : (
+            visibleTasks.map((task) => (
+              <TaskItem key={task.id} task={task} />
+            ))
+          )}
         </div>
       )}
     </div>

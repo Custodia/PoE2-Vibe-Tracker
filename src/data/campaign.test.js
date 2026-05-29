@@ -35,7 +35,7 @@ describe('campaign.json data integrity', () => {
   });
 
   it('every task has required fields with valid type', () => {
-    const validTypes = ['quest', 'waypoint', 'skill_point', 'trial'];
+    const validTypes = ['quest', 'waypoint', 'skill_point', 'trial', 'permanent_reward', 'additional_reward', 'league_mechanic'];
     for (const act of campaignData.acts) {
       for (const area of act.areas) {
         for (const task of area.tasks) {

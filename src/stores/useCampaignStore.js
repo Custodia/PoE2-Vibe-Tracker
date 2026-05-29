@@ -11,6 +11,7 @@ function loadFromStorage() {
     return {
       completedTasks: new Set(parsed.completedTasks || []),
       areaOrder: parsed.areaOrder || {},
+      hiddenTaskTypes: new Set(parsed.hiddenTaskTypes || []),
     };
   } catch {
     return null;
@@ -24,6 +25,7 @@ function saveToStorage(state) {
       JSON.stringify({
         completedTasks: [...state.completedTasks],
         areaOrder: state.areaOrder,
+        hiddenTaskTypes: [...(state.hiddenTaskTypes || [])],
       })
     );
   } catch {
@@ -69,6 +71,7 @@ const useCampaignStore = create((set, _get) => ({
   areaOrder: saved?.areaOrder
     ? reconcileAreaOrder(saved.areaOrder, defaultOrder)
     : defaultOrder,
+  hiddenTaskTypes: saved?.hiddenTaskTypes || new Set(),
 
   toggleTask(taskId) {
     set((state) => {
@@ -105,11 +108,25 @@ const useCampaignStore = create((set, _get) => ({
     });
   },
 
+  toggleHiddenTaskType(taskType) {
+    set((state) => {
+      const next = new Set(state.hiddenTaskTypes);
+      if (next.has(taskType)) {
+        next.delete(taskType);
+      } else {
+        next.add(taskType);
+      }
+      const newState = { hiddenTaskTypes: next };
+      saveToStorage({ ...state, ...newState });
+      return newState;
+    });
+  },
+
   resetProgress() {
     const freshOrder = buildDefaultAreaOrder();
-    set(() => {
+    set((state) => {
       const newState = { completedTasks: new Set(), areaOrder: freshOrder };
-      saveToStorage(newState);
+      saveToStorage({ ...newState, hiddenTaskTypes: state.hiddenTaskTypes });
       return newState;
     });
   },
