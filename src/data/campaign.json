@@ -13,7 +13,7 @@
             { "id": "a1-cf-perm1", "name": "Kill Beira of the Rotten Pack", "type": "permanent_reward", "reward": "+10% Cold Resistance", "tags": ["boss"] },
             { "id": "a1-cf-bonus1", "name": "Find and loot Mysterious Campsite", "type": "additional_reward", "reward": "Uncut Skill Gem L1" },
             { "id": "a1-cf-wp", "name": "Activate Waypoint", "type": "waypoint" },
-            { "id": "a1-cf-league", "name": "League Mechanic", "type": "league_mechanic" }
+            { "id": "a1-cf-league", "name": "League mechanic", "type": "league_mechanic", "reward": "Previously in 0.4: Orb of Transmutation" }
           ]
         },
         {
@@ -23,7 +23,7 @@
           "optional": true,
           "tasks": [
             { "id": "a1-mb-bonus1", "name": "Kill The Devourer & report back", "type": "additional_reward", "reward": "Uncut Skill Gem L2 + Uncut Support Gem L1 + 100 Gold", "tags": ["boss"] },
-            { "id": "a1-mb-league", "name": "League Mechanic", "type": "league_mechanic" }
+            { "id": "a1-mb-league", "name": "League mechanic", "type": "league_mechanic", "reward": "Previously in 0.4: Orb of Augmentation" }
           ]
         },
         {
@@ -33,7 +33,7 @@
           "tasks": [
             { "id": "a1-gw-bonus1", "name": "Loot Areagne's Hut and slay the Rare that spawns", "type": "additional_reward", "reward": "Medium Life and Mana Flask + Uncut Support Gem L1" },
             { "id": "a1-gw-wp", "name": "Activate Waypoint", "type": "waypoint" },
-            { "id": "a1-gw-league", "name": "League Mechanic", "type": "league_mechanic" }
+            { "id": "a1-gw-league", "name": "League mechanic", "type": "league_mechanic", "reward": "Previously in 0.4: Orb of Transmutation" }
           ]
         },
         {
@@ -44,7 +44,7 @@
             { "id": "a1-rv-quest1", "name": "Defeat The Rust King", "type": "quest", "tags": ["boss"] },
             { "id": "a1-rv-bonus1", "name": "Loot refined weapon racks", "type": "additional_reward", "reward": "T2 Martial weapons" },
             { "id": "a1-rv-wp", "name": "Activate Waypoint", "type": "waypoint" },
-            { "id": "a1-rv-league", "name": "League Mechanic", "type": "league_mechanic" }
+            { "id": "a1-rv-league", "name": "League mechanic", "type": "league_mechanic", "reward": "Previously in 0.4: Uncut Skill Gem (Level 2)" }
           ]
         },
         {
@@ -54,7 +54,7 @@
           "tasks": [
             { "id": "a1-gt-bonus1", "name": "Kill Ervig, Rotted Druid", "type": "additional_reward", "reward": "Uncut Support Gem L1", "tags": ["boss"] },
             { "id": "a1-gt-wp", "name": "Activate Waypoint", "type": "waypoint" },
-            { "id": "a1-gt-league", "name": "League Mechanic", "type": "league_mechanic" }
+            { "id": "a1-gt-league", "name": "League mechanic", "type": "league_mechanic", "reward": "Previously in 0.4: Uncut Skill Gem (Level 3)" }
           ]
         },
         {
@@ -65,7 +65,7 @@
             { "id": "a1-ce-quest1", "name": "Defeat Lachlann of Endless Lament", "type": "quest", "tags": ["boss"] },
             { "id": "a1-ce-bonus1", "name": "Loot the grave found in the Cemetery", "type": "additional_reward", "reward": "50/50 chance: Iron Ring or Lazuli Ring" },
             { "id": "a1-ce-wp", "name": "Activate Waypoint", "type": "waypoint" },
-            { "id": "a1-ce-league", "name": "League Mechanic", "type": "league_mechanic" }
+            { "id": "a1-ce-league", "name": "League mechanic", "type": "league_mechanic", "reward": "Previously in 0.4: Regal Orb" }
           ]
         },
         {
@@ -76,7 +76,7 @@
             { "id": "a1-tc-quest1", "name": "Defeat Asinia, Praetor Consort", "type": "quest", "tags": ["boss"] },
             { "id": "a1-tc-bonus1", "name": "Loot Haunted Treasure and slay the rare that spawns", "type": "additional_reward", "reward": "Rare item + Uncut Support Gem L1" },
             { "id": "a1-tc-wp", "name": "Activate Waypoint", "type": "waypoint" },
-            { "id": "a1-tc-league", "name": "League Mechanic", "type": "league_mechanic" }
+            { "id": "a1-tc-league", "name": "League mechanic", "type": "league_mechanic", "reward": "Previously in 0.4: Amulet" }
           ]
         },
         {
@@ -87,7 +87,7 @@
             { "id": "a1-mp-quest1", "name": "Defeat Draven, Eternal Praetor", "type": "quest", "tags": ["boss"] },
             { "id": "a1-mp-bonus1", "name": "Loot Forgotten Riches", "type": "additional_reward", "reward": "Gold + Rare chest" },
             { "id": "a1-mp-wp", "name": "Activate Waypoint", "type": "waypoint" },
-            { "id": "a1-mp-league", "name": "League Mechanic", "type": "league_mechanic" }
+            { "id": "a1-mp-league", "name": "League mechanic", "type": "league_mechanic", "reward": "Previously in 0.4: Lesser Rune" }
           ]
         },
         {
@@ -98,7 +98,7 @@
             { "id": "a1-hg-perm1", "name": "Kill The Crowbell", "type": "permanent_reward", "reward": "+2 Weapon Set Passive Skill Points", "tags": ["boss"] },
             { "id": "a1-dr-bonus1", "name": "Complete the Dryadic Ritual", "type": "additional_reward", "reward": "Uncut Support Gem L1" },
             { "id": "a1-hg-wp", "name": "Activate Waypoint", "type": "waypoint" },
-            { "id": "a1-hg-league", "name": "League Mechanic", "type": "league_mechanic" }
+            { "id": "a1-hg-league", "name": "League mechanic", "type": "league_mechanic", "reward": "Previously in 0.4: Exalted Orb" }
           ]
         },
         {
@@ -109,7 +109,7 @@
           "tasks": [
             { "id": "a1-ft-perm1", "name": "Kill The King In The Mist", "type": "permanent_reward", "reward": "+30 Spirit", "tags": ["boss"] },
             { "id": "a1-ft-wp", "name": "Activate Waypoint", "type": "waypoint" },
-            { "id": "a1-ft-league", "name": "League Mechanic", "type": "league_mechanic" }
+            { "id": "a1-ft-league", "name": "League mechanic", "type": "league_mechanic", "reward": "Previously in 0.4: Uncut Support Gem" }
           ]
         },
         {
@@ -120,7 +120,7 @@
             { "id": "a1-of-perm1", "name": "Find Una's Lute & deliver it", "type": "permanent_reward", "reward": "+2 Weapon Set Passive Skill Points" },
             { "id": "a1-of-bonus1", "name": "Kill the monster ambushing you", "type": "additional_reward", "reward": "Uncut Skill Gem L4" },
             { "id": "a1-of-wp", "name": "Activate Waypoint", "type": "waypoint" },
-            { "id": "a1-of-league", "name": "League Mechanic", "type": "league_mechanic" }
+            { "id": "a1-of-league", "name": "League mechanic", "type": "league_mechanic", "reward": "Previously in 0.4: Uncut Skill Gem (Level 4)" }
           ]
         },
         {
@@ -132,7 +132,7 @@
             { "id": "a1-ov-perm1", "name": "Find Smithing Tools & deliver them", "type": "permanent_reward", "reward": "Salvaging Bench Unlock" },
             { "id": "a1-ov-bonus1", "name": "Loot the Blacksmith's chest next to the Smithing Tools", "type": "additional_reward", "reward": "Artificer's Orb + Blank Lesser Rune" },
             { "id": "a1-ov-wp", "name": "Activate Waypoint", "type": "waypoint" },
-            { "id": "a1-ov-league", "name": "League Mechanic", "type": "league_mechanic" }
+            { "id": "a1-ov-league", "name": "League mechanic", "type": "league_mechanic", "reward": "Previously in 0.4: Artificer's Orb" }
           ]
         },
         {
@@ -142,7 +142,7 @@
           "tasks": [
             { "id": "a1-tg-bonus1", "name": "Loot the hanged corpse at The Gallows", "type": "additional_reward", "reward": "Uncut Support Gem L1" },
             { "id": "a1-mr-wp", "name": "Activate Waypoint", "type": "waypoint" },
-            { "id": "a1-mr-league", "name": "League Mechanic", "type": "league_mechanic" }
+            { "id": "a1-mr-league", "name": "League mechanic", "type": "league_mechanic", "reward": "Previously in 0.4: Uncut Skill Gem (Level 5)" }
           ]
         },
         {
@@ -153,7 +153,7 @@
             { "id": "a1-om-quest1", "name": "Defeat Count Geonor", "type": "quest", "tags": ["boss"] },
             { "id": "a1-om-perm1", "name": "Kill Candlemass, The Living Rite", "type": "permanent_reward", "reward": "+20 Maximum Life", "tags": ["boss"] },
             { "id": "a1-om-wp", "name": "Activate Waypoint", "type": "waypoint" },
-            { "id": "a1-om-league", "name": "League Mechanic", "type": "league_mechanic" }
+            { "id": "a1-om-league", "name": "League mechanic", "type": "league_mechanic", "reward": "Previously in 0.4: Orb of Alchemy" }
           ]
         }
       ]
@@ -171,7 +171,7 @@
             { "id": "a2-vo-quest1", "name": "Defeat Rathbreaker", "type": "quest", "tags": ["boss"] },
             { "id": "a2-vo-bonus1", "name": "Loot Devastated Camp", "type": "additional_reward", "reward": "Uncut Support Gem L2" },
             { "id": "a2-vo-wp", "name": "Activate Waypoint", "type": "waypoint" },
-            { "id": "a2-vo-league", "name": "League Mechanic", "type": "league_mechanic" }
+            { "id": "a2-vo-league", "name": "League mechanic", "type": "league_mechanic", "reward": "Previously in 0.4: Exalted Orb" }
           ]
         },
         {
@@ -181,7 +181,7 @@
           "tasks": [
             { "id": "a2-mq-bonus1", "name": "Find and loot Faridun War Cache", "type": "additional_reward", "reward": "Artificer's Orb" },
             { "id": "a2-mq-wp", "name": "Activate Waypoint", "type": "waypoint" },
-            { "id": "a2-mq-league", "name": "League Mechanic", "type": "league_mechanic" }
+            { "id": "a2-mq-league", "name": "League mechanic", "type": "league_mechanic", "reward": "Previously in 0.4: Uncut Spirit Gem (Level 5)" }
           ]
         },
         {
@@ -191,7 +191,7 @@
           "tasks": [
             { "id": "a2-mm-quest1", "name": "Defeat Rudja, the Dread Engineer", "type": "quest", "tags": ["boss"] },
             { "id": "a2-mm-wp", "name": "Activate Waypoint", "type": "waypoint" },
-            { "id": "a2-mm-league", "name": "League Mechanic", "type": "league_mechanic" }
+            { "id": "a2-mm-league", "name": "League mechanic", "type": "league_mechanic", "reward": "Previously in 0.4: Uncut Support Gem (Level 2)" }
           ]
         },
         {
@@ -202,7 +202,7 @@
             { "id": "a2-tp-bonus2", "name": "Kill Balbala, The Traitor", "type": "additional_reward", "reward": "Djinn Barya", "tags": ["boss"] },
             { "id": "a2-tp-bonus1", "name": "Find and loot the Bellchest", "type": "additional_reward", "reward": "Uncut Skill Gem L6" },
             { "id": "a2-tp-wp", "name": "Activate Waypoint", "type": "waypoint" },
-            { "id": "a2-tp-league", "name": "League Mechanic", "type": "league_mechanic" }
+            { "id": "a2-tp-league", "name": "League mechanic", "type": "league_mechanic", "reward": "Previously in 0.4: Artificer's Orb" }
           ]
         },
         {
@@ -211,7 +211,7 @@
           "prerequisites": ["traitors-passage"],
           "tasks": [
             { "id": "a2-hg-quest1", "name": "Defeat Jamanra, the Risen King", "type": "quest", "tags": ["boss"] },
-            { "id": "a2-hg-league", "name": "League Mechanic", "type": "league_mechanic" }
+            { "id": "a2-hg-league", "name": "League mechanic", "type": "league_mechanic", "reward": "Previously in 0.4: Exalted Orb" }
           ]
         },
         {
@@ -222,7 +222,7 @@
           "tasks": [
             { "id": "a2-mbd-bonus1", "name": "Enter Lightless Passage", "type": "additional_reward", "reward": "Abyssal Crafting Unlock" },
             { "id": "a2-mbd-wp", "name": "Activate Waypoint", "type": "waypoint" },
-            { "id": "a2-mbd-league", "name": "League Mechanic", "type": "league_mechanic" }
+            { "id": "a2-mbd-league", "name": "League mechanic", "type": "league_mechanic", "reward": "Previously in 0.4: Regal Orb" }
           ]
         },
         {
@@ -234,7 +234,7 @@
             { "id": "a2-bp-perm1", "name": "Find the Sun Clan Relic (dropped by snakes exclusively)", "type": "permanent_reward", "reward": "Needed for Valley of the Titans altar" },
             { "id": "a2-bp-bonus1", "name": "Kill Iktab & Ekbab, return Mastodon Tusks", "type": "additional_reward", "reward": "Uncut Support Gem L2", "tags": ["boss"] },
             { "id": "a2-bp-wp", "name": "Activate Waypoint", "type": "waypoint" },
-            { "id": "a2-bp-league", "name": "League Mechanic", "type": "league_mechanic" }
+            { "id": "a2-bp-league", "name": "League mechanic", "type": "league_mechanic", "reward": "Previously in 0.4: Exalted Orb" }
           ]
         },
         {
@@ -247,7 +247,7 @@
             { "id": "a2-ke-perm2", "name": "Find the Kabal Clan Relic (dropped by hyenas exclusively)", "type": "permanent_reward", "reward": "Needed for Valley of the Titans altar" },
             { "id": "a2-ke-bonus1", "name": "Find Treasure Room", "type": "additional_reward", "reward": "White base Amulet" },
             { "id": "a2-ke-wp", "name": "Activate Waypoint", "type": "waypoint" },
-            { "id": "a2-ke-league", "name": "League Mechanic", "type": "league_mechanic" }
+            { "id": "a2-ke-league", "name": "League mechanic", "type": "league_mechanic", "reward": "Previously in 0.4: Gemcutter's Prism" }
           ]
         },
         {
@@ -257,7 +257,7 @@
           "optional": true,
           "tasks": [
             { "id": "a2-lc-wp", "name": "Activate Waypoint", "type": "waypoint" },
-            { "id": "a2-lc-league", "name": "League Mechanic", "type": "league_mechanic" }
+            { "id": "a2-lc-league", "name": "League mechanic", "type": "league_mechanic", "reward": "Previously in 0.4: Orb of Alchemy" }
           ]
         },
         {
@@ -269,7 +269,7 @@
             { "id": "a2-bs-bonus2", "name": "Kill Azarian, the Forsaken Son", "type": "additional_reward", "reward": "Uncut Support Gem L2", "tags": ["boss"] },
             { "id": "a2-bs-bonus1", "name": "Find the Elemental Shrine and loot 1 of 3 chests", "type": "additional_reward", "reward": "Ruby Ring + Desert Rune, Topaz Ring + Storm Rune, or Sapphire Ring + Glacial Rune" },
             { "id": "a2-bs-wp", "name": "Activate Waypoint", "type": "waypoint" },
-            { "id": "a2-bs-league", "name": "League Mechanic", "type": "league_mechanic" }
+            { "id": "a2-bs-league", "name": "League mechanic", "type": "league_mechanic", "reward": "Previously in 0.4: Lesser Jeweller's Orb" }
           ]
         },
         {
@@ -281,7 +281,7 @@
             { "id": "a2-vt-perm1", "name": "Deliver Relics to altar", "type": "permanent_reward", "reward": "+1 Charm Slot; Choose 30% Charm Charges gained or Charm Effect Duration (Swapable)" },
             { "id": "a2-vt-bonus1", "name": "Complete guaranteed Abyss spawn", "type": "additional_reward", "reward": "Great EXP + Rare Loot" },
             { "id": "a2-vt-wp", "name": "Activate Waypoint", "type": "waypoint" },
-            { "id": "a2-vt-league", "name": "League Mechanic", "type": "league_mechanic" }
+            { "id": "a2-vt-league", "name": "League mechanic", "type": "league_mechanic", "reward": "Previously in 0.4: Unique" }
           ]
         },
         {
@@ -292,7 +292,7 @@
           "tasks": [
             { "id": "a2-tg-bonus1", "name": "Kill Zalmarath, the Colossus", "type": "additional_reward", "reward": "Uncut Support Gem L2", "tags": ["boss"] },
             { "id": "a2-tg-wp", "name": "Activate Waypoint", "type": "waypoint" },
-            { "id": "a2-tg-league", "name": "League Mechanic", "type": "league_mechanic" }
+            { "id": "a2-tg-league", "name": "League mechanic", "type": "league_mechanic", "reward": "Previously in 0.4: Chance Shard" }
           ]
         },
         {
@@ -304,7 +304,7 @@
             { "id": "a2-de-bonus2", "name": "Kill the Watchful Twins", "type": "additional_reward", "reward": "Level 28 Barya + Rare Loot", "tags": ["boss"] },
             { "id": "a2-de-bonus1", "name": "Find and loot the container along the left or right wall", "type": "additional_reward", "reward": "Artificer's Orb" },
             { "id": "a2-de-wp", "name": "Activate Waypoint", "type": "waypoint" },
-            { "id": "a2-de-league", "name": "League Mechanic", "type": "league_mechanic" }
+            { "id": "a2-de-league", "name": "League mechanic", "type": "league_mechanic", "reward": "Previously in 0.4: Lesser Rune" }
           ]
         },
         {
@@ -314,7 +314,7 @@
           "tasks": [
             { "id": "a2-pm-bonus1", "name": "Loot Hushed Urn", "type": "additional_reward", "reward": "Uncut Support Gem L2" },
             { "id": "a2-pm-wp", "name": "Activate Waypoint", "type": "waypoint" },
-            { "id": "a2-pm-league", "name": "League Mechanic", "type": "league_mechanic" }
+            { "id": "a2-pm-league", "name": "League mechanic", "type": "league_mechanic", "reward": "Possible fixed reward" }
           ]
         },
         {
@@ -325,7 +325,7 @@
             { "id": "a2-sd-quest1", "name": "Defeat Tor Gul, the Defiler", "type": "quest", "tags": ["boss"] },
             { "id": "a2-sd-perm1", "name": "Interact with the Sisters of Garukhan Shrine", "type": "permanent_reward", "reward": "+10% Lightning Resistance" },
             { "id": "a2-sd-wp", "name": "Activate Waypoint", "type": "waypoint" },
-            { "id": "a2-sd-league", "name": "League Mechanic", "type": "league_mechanic" }
+            { "id": "a2-sd-league", "name": "League mechanic", "type": "league_mechanic", "reward": "Previously in 0.4: Gemcutter's Prism" }
           ]
         },
         {
@@ -334,7 +334,7 @@
           "prerequisites": ["spires-of-deshar"],
           "tasks": [
             { "id": "a2-dn-wp", "name": "Activate Waypoint", "type": "waypoint" },
-            { "id": "a2-dn-league", "name": "League Mechanic", "type": "league_mechanic" }
+            { "id": "a2-dn-league", "name": "League mechanic", "type": "league_mechanic", "reward": "Possible fixed reward" }
           ]
         },
         {
@@ -344,7 +344,7 @@
           "tasks": [
             { "id": "a2-dv-quest1", "name": "Defeat Jamanra, the Abomination", "type": "quest", "tags": ["boss"] },
             { "id": "a2-dv-wp", "name": "Activate Waypoint", "type": "waypoint" },
-            { "id": "a2-dv-league", "name": "League Mechanic", "type": "league_mechanic" }
+            { "id": "a2-dv-league", "name": "League mechanic", "type": "league_mechanic", "reward": "Possible fixed reward" }
           ]
         }
       ]
@@ -362,7 +362,7 @@
             { "id": "a3-sm-bonus1", "name": "Kill Rootdredge", "type": "additional_reward", "reward": "Uncut Skill Gem L9", "tags": ["boss"] },
             { "id": "a3-sm-bonus2", "name": "Find and loot Orok Campfire", "type": "additional_reward", "reward": "Lesser Jeweller's Orb" },
             { "id": "a3-sm-wp", "name": "Activate Waypoint", "type": "waypoint" },
-            { "id": "a3-sm-league", "name": "League Mechanic", "type": "league_mechanic" }
+            { "id": "a3-sm-league", "name": "League mechanic", "type": "league_mechanic", "reward": "Previously in 0.4: Uncut Support Gem (Level 3)" }
           ]
         },
         {
@@ -374,7 +374,7 @@
             { "id": "a3-jr-bonus1", "name": "Find camp with Trader and chests", "type": "additional_reward", "reward": "Rare gloves + high quality equipment from trader" },
             { "id": "a3-jr-bonus2", "name": "Find Jungle Grave", "type": "additional_reward", "reward": "Rare belt of your choice (interact with Servi)" },
             { "id": "a3-jr-wp", "name": "Activate Waypoint", "type": "waypoint" },
-            { "id": "a3-jr-league", "name": "League Mechanic", "type": "league_mechanic" }
+            { "id": "a3-jr-league", "name": "League mechanic", "type": "league_mechanic", "reward": "Previously in 0.4: Orb of Alchemy" }
           ]
         },
         {
@@ -384,7 +384,7 @@
           "optional": true,
           "tasks": [
             { "id": "a3-vc-perm1", "name": "Find Venom Vial from corpse & deliver to Servi in camp", "type": "permanent_reward", "reward": "Permanent Choice: 25% Stun Threshold / 30% Elemental Ailment Threshold / 25% Mana Regen" },
-            { "id": "a3-vc-league", "name": "League Mechanic", "type": "league_mechanic" }
+            { "id": "a3-vc-league", "name": "League mechanic", "type": "league_mechanic", "reward": "Previously in 0.4: Magic Ring" }
           ]
         },
         {
@@ -394,7 +394,7 @@
           "tasks": [
             { "id": "a3-ib-bonus1", "name": "Find camp with Trader and chests", "type": "additional_reward", "reward": "Rare boots + high quality equipment from trader" },
             { "id": "a3-ib-wp", "name": "Activate Waypoint", "type": "waypoint" },
-            { "id": "a3-ib-league", "name": "League Mechanic", "type": "league_mechanic" }
+            { "id": "a3-ib-league", "name": "League mechanic", "type": "league_mechanic", "reward": "Previously in 0.4: Exalted Orb" }
           ]
         },
         {
@@ -406,7 +406,7 @@
             { "id": "a3-ab-perm1", "name": "Kill Ignagduk, The Bog Witch", "type": "permanent_reward", "reward": "+30 Spirit + Uncut Spirit Gem", "tags": ["boss"] },
             { "id": "a3-ab-bonus1", "name": "Find and start the Flame Ritual", "type": "additional_reward", "reward": "Incredible EXP spot (farm until level 34)" },
             { "id": "a3-ab-wp", "name": "Activate Waypoint", "type": "waypoint" },
-            { "id": "a3-ab-league", "name": "League Mechanic", "type": "league_mechanic" }
+            { "id": "a3-ab-league", "name": "League mechanic", "type": "league_mechanic", "reward": "Previously in 0.4: Rune" }
           ]
         },
         {
@@ -416,7 +416,7 @@
           "tasks": [
             { "id": "a3-cw-quest1", "name": "Defeat Xyclucian, the Chimera", "type": "quest", "tags": ["boss"] },
             { "id": "a3-cw-wp", "name": "Activate Waypoint", "type": "waypoint" },
-            { "id": "a3-cw-league", "name": "League Mechanic", "type": "league_mechanic" }
+            { "id": "a3-cw-league", "name": "League mechanic", "type": "league_mechanic", "reward": "Previously in 0.4: Uncut Skill Gem (Level 9)" }
           ]
         },
         {
@@ -426,7 +426,7 @@
           "tasks": [
             { "id": "a3-jm-perm1", "name": "Kill Blackjaw, The Remnant", "type": "permanent_reward", "reward": "+10% Fire Resistance", "tags": ["boss"] },
             { "id": "a3-jm-wp", "name": "Activate Waypoint", "type": "waypoint" },
-            { "id": "a3-jm-league", "name": "League Mechanic", "type": "league_mechanic" }
+            { "id": "a3-jm-league", "name": "League mechanic", "type": "league_mechanic", "reward": "Previously in 0.4: Artificer's Orb" }
           ]
         },
         {
@@ -436,7 +436,7 @@
           "tasks": [
             { "id": "a3-js-quest1", "name": "Defeat Zicoatl, Warden of the Core", "type": "quest", "tags": ["boss"] },
             { "id": "a3-js-wp", "name": "Activate Waypoint", "type": "waypoint" },
-            { "id": "a3-js-league", "name": "League Mechanic", "type": "league_mechanic" }
+            { "id": "a3-js-league", "name": "League mechanic", "type": "league_mechanic", "reward": "Previously in 0.4: Exalted Orb" }
           ]
         },
         {
@@ -445,7 +445,7 @@
           "prerequisites": ["jinquanis-sanctum"],
           "tasks": [
             { "id": "a3-mw-bonus1", "name": "Loot Narag's Hut", "type": "additional_reward", "reward": "Rare weapon" },
-            { "id": "a3-mw-league", "name": "League Mechanic", "type": "league_mechanic" }
+            { "id": "a3-mw-league", "name": "League mechanic", "type": "league_mechanic", "reward": "Previously in 0.4: Uncut Spirit Gem (Level 10)" }
           ]
         },
         {
@@ -454,7 +454,7 @@
           "prerequisites": ["matlan-waterways"],
           "tasks": [
             { "id": "a3-dc-wp", "name": "Activate Waypoint", "type": "waypoint" },
-            { "id": "a3-dc-league", "name": "League Mechanic", "type": "league_mechanic" }
+            { "id": "a3-dc-league", "name": "League mechanic", "type": "league_mechanic", "reward": "Previously in 0.4: Uncut Support Gem (Level 3)" }
           ]
         },
         {
@@ -465,7 +465,7 @@
           "tasks": [
             { "id": "a3-mv-perm1", "name": "Kill Mektul, the Forgemaster & talk to Oswald in camp", "type": "permanent_reward", "reward": "Reforging Bench Unlock + Uncut Skill Gem L10", "tags": ["boss"] },
             { "id": "a3-mv-wp", "name": "Activate Waypoint", "type": "waypoint" },
-            { "id": "a3-mv-league", "name": "League Mechanic", "type": "league_mechanic" }
+            { "id": "a3-mv-league", "name": "League mechanic", "type": "league_mechanic", "reward": "Previously in 0.4: Unique" }
           ]
         },
         {
@@ -475,7 +475,7 @@
           "tasks": [
             { "id": "a3-af-quest1", "name": "Defeat Queen of Filth", "type": "quest", "tags": ["boss"] },
             { "id": "a3-af-wp", "name": "Activate Waypoint", "type": "waypoint" },
-            { "id": "a3-af-league", "name": "League Mechanic", "type": "league_mechanic" }
+            { "id": "a3-af-league", "name": "League mechanic", "type": "league_mechanic", "reward": "Previously in 0.4: Vaal Orb" }
           ]
         },
         {
@@ -484,7 +484,7 @@
           "prerequisites": ["apex-of-filth"],
           "tasks": [
             { "id": "a3-tk-quest1", "name": "Defeat Ketzuli, High Priest of the Sun", "type": "quest", "tags": ["boss"] },
-            { "id": "a3-tk-league", "name": "League Mechanic", "type": "league_mechanic" }
+            { "id": "a3-tk-league", "name": "League mechanic", "type": "league_mechanic", "reward": "Previously in 0.4: Uncut Spirit Gem (Level 11)" }
           ]
         },
         {
@@ -494,7 +494,7 @@
           "tasks": [
             { "id": "a3-ut-quest1", "name": "Defeat Viper Napuatzi", "type": "quest", "tags": ["boss"] },
             { "id": "a3-ut-wp", "name": "Activate Waypoint", "type": "waypoint" },
-            { "id": "a3-ut-league", "name": "League Mechanic", "type": "league_mechanic" }
+            { "id": "a3-ut-league", "name": "League mechanic", "type": "league_mechanic", "reward": "Previously in 0.4: Random Jewel (chance for time-lost)" }
           ]
         },
         {
@@ -504,7 +504,7 @@
           "tasks": [
             { "id": "a3-au-perm1", "name": "Kill large enemies for Sacrificial Heart & sacrifice at altar", "type": "permanent_reward", "reward": "+2 Weapon Set Passive Skill Points" },
             { "id": "a3-au-wp", "name": "Activate Waypoint", "type": "waypoint" },
-            { "id": "a3-au-league", "name": "League Mechanic", "type": "league_mechanic" }
+            { "id": "a3-au-league", "name": "League mechanic", "type": "league_mechanic", "reward": "Previously in 0.4: Uncut Skill Gem (Level 11)" }
           ]
         },
         {
@@ -514,7 +514,7 @@
           "tasks": [
             { "id": "a3-bc-quest1", "name": "Defeat Doryani, Royal Thaumaturge", "type": "quest", "tags": ["boss"] },
             { "id": "a3-bc-wp", "name": "Activate Waypoint", "type": "waypoint" },
-            { "id": "a3-bc-league", "name": "League Mechanic", "type": "league_mechanic" }
+            { "id": "a3-bc-league", "name": "League mechanic", "type": "league_mechanic", "reward": "Previously in 0.4: Vaal Orb" }
           ]
         }
       ]
@@ -532,7 +532,7 @@
             { "id": "a4-ik-bonus2", "name": "Kill Blind Beast", "type": "additional_reward", "reward": "Blank Greater Rune", "tags": ["boss"] },
             { "id": "a4-ik-bonus1", "name": "Loot Fossilised Formation", "type": "additional_reward", "reward": "Lesser Jeweller's Orb" },
             { "id": "a4-ik-wp", "name": "Activate Waypoint", "type": "waypoint" },
-            { "id": "a4-ik-league", "name": "League Mechanic", "type": "league_mechanic" }
+            { "id": "a4-ik-league", "name": "League mechanic", "type": "league_mechanic", "reward": "Previously in 0.4: Gemcutter's Prism" }
           ]
         },
         {
@@ -543,7 +543,7 @@
             { "id": "a4-vw-quest1", "name": "Defeat Krutog, Lord of Kin", "type": "quest", "tags": ["boss"] },
             { "id": "a4-vw-bonus1", "name": "Kill Fire and Lightning Golems (last kill determines ring type)", "type": "additional_reward", "reward": "Topaz Ring or Ruby Ring (heavily weighted affixes, nearly guaranteed upgrade)" },
             { "id": "a4-vw-wp", "name": "Activate Waypoint", "type": "waypoint" },
-            { "id": "a4-vw-league", "name": "League Mechanic", "type": "league_mechanic" }
+            { "id": "a4-vw-league", "name": "League mechanic", "type": "league_mechanic", "reward": "Previously in 0.4: Uncut Support Gem (Level 4)" }
           ]
         },
         {
@@ -552,7 +552,7 @@
           "prerequisites": [],
           "tasks": [
             { "id": "a4-kb-wp", "name": "Activate Waypoint", "type": "waypoint" },
-            { "id": "a4-kb-league", "name": "League Mechanic", "type": "league_mechanic" }
+            { "id": "a4-kb-league", "name": "League mechanic", "type": "league_mechanic", "reward": "Previously in 0.4: Exalted Orb" }
           ]
         },
         {
@@ -563,7 +563,7 @@
             { "id": "a4-je-quest1", "name": "Defeat Captain Hartlin", "type": "quest", "tags": ["boss"] },
             { "id": "a4-je-perm1", "name": "Kill Omniphobia, Fear Manifest", "type": "permanent_reward", "reward": "+2 Weapon Set Passive Skill Points + Uncut Skill Gem L13", "tags": ["boss"] },
             { "id": "a4-je-wp", "name": "Activate Waypoint", "type": "waypoint" },
-            { "id": "a4-je-league", "name": "League Mechanic", "type": "league_mechanic" }
+            { "id": "a4-je-league", "name": "League mechanic", "type": "league_mechanic", "reward": "Previously in 0.4: Orb of Alchemy" }
           ]
         },
         {
@@ -573,7 +573,7 @@
           "tasks": [
             { "id": "a4-ap-perm1", "name": "Find Goddess of Justice and pick a bonus", "type": "permanent_reward", "reward": "Swapable: +30% Mana Recovery from flasks or +30% Life Recovery from Flasks" },
             { "id": "a4-ap-wp", "name": "Activate Waypoint", "type": "waypoint" },
-            { "id": "a4-ap-league", "name": "League Mechanic", "type": "league_mechanic" }
+            { "id": "a4-ap-league", "name": "League mechanic", "type": "league_mechanic", "reward": "Previously in 0.4: Exalted Orb" }
           ]
         },
         {
@@ -583,7 +583,7 @@
           "tasks": [
             { "id": "a4-so-quest1", "name": "Defeat The Prisoner", "type": "quest", "tags": ["boss"] },
             { "id": "a4-so-wp", "name": "Activate Waypoint", "type": "waypoint" },
-            { "id": "a4-so-league", "name": "League Mechanic", "type": "league_mechanic" }
+            { "id": "a4-so-league", "name": "League mechanic", "type": "league_mechanic", "reward": "Previously in 0.4: Rune" }
           ]
         },
         {
@@ -593,7 +593,7 @@
           "tasks": [
             { "id": "a4-wi-bonus1", "name": "Kill Great White One for Shark Fin", "type": "additional_reward", "reward": "Choice: Uncut Skill Gem L11 / Spirit Gem L11 / Support Gem L4", "tags": ["boss"] },
             { "id": "a4-wi-wp", "name": "Activate Waypoint", "type": "waypoint" },
-            { "id": "a4-wi-league", "name": "League Mechanic", "type": "league_mechanic" }
+            { "id": "a4-wi-league", "name": "League mechanic", "type": "league_mechanic", "reward": "Previously in 0.4: Artificer's Orb" }
           ]
         },
         {
@@ -604,7 +604,7 @@
             { "id": "a4-sc-quest1", "name": "Defeat Diamora, Song of Death", "type": "quest", "tags": ["boss"] },
             { "id": "a4-sc-bonus1", "name": "Find and loot the Beckoning Clam for a pearl", "type": "additional_reward", "reward": "Exchange pearl for an all res amulet in town" },
             { "id": "a4-sc-wp", "name": "Activate Waypoint", "type": "waypoint" },
-            { "id": "a4-sc-league", "name": "League Mechanic", "type": "league_mechanic" }
+            { "id": "a4-sc-league", "name": "League mechanic", "type": "league_mechanic", "reward": "Previously in 0.4: Magic Charm" }
           ]
         },
         {
@@ -614,7 +614,7 @@
           "tasks": [
             { "id": "a4-si-quest1", "name": "Defeat Scourge of the Skies", "type": "quest", "tags": ["boss"] },
             { "id": "a4-si-wp", "name": "Activate Waypoint", "type": "waypoint" },
-            { "id": "a4-si-league", "name": "League Mechanic", "type": "league_mechanic" }
+            { "id": "a4-si-league", "name": "League mechanic", "type": "league_mechanic", "reward": "Previously in 0.4: Uncut Support Gem (Level 4)" }
           ]
         },
         {
@@ -624,7 +624,7 @@
           "tasks": [
             { "id": "a4-eh-perm1", "name": "Press F to pay Respect in the Silent Hall", "type": "permanent_reward", "reward": "+5% Maximum Mana" },
             { "id": "a4-eh-wp", "name": "Activate Waypoint", "type": "waypoint" },
-            { "id": "a4-eh-league", "name": "League Mechanic", "type": "league_mechanic" }
+            { "id": "a4-eh-league", "name": "League mechanic", "type": "league_mechanic", "reward": "Previously in 0.4: Chaos Orb" }
           ]
         },
         {
@@ -634,7 +634,7 @@
           "tasks": [
             { "id": "a4-hd-perm1", "name": "Complete all 3 Trials for 3 Tattoos & offer them", "type": "permanent_reward", "reward": "Permanent Choice: Tawhoa (+5 dex or +5 lightning res), Tasalio (+5 int or +5 cold res), Ngamahu (+5 str or +5 fire res)" },
             { "id": "a4-hd-wp", "name": "Activate Waypoint", "type": "waypoint" },
-            { "id": "a4-hd-league", "name": "League Mechanic", "type": "league_mechanic" }
+            { "id": "a4-hd-league", "name": "League mechanic", "type": "league_mechanic", "reward": "Possible fixed reward" }
           ]
         },
         {
@@ -643,7 +643,7 @@
           "prerequisites": ["halls-of-the-dead"],
           "tasks": [
             { "id": "a4-ta-perm1", "name": "Kill Yama The White", "type": "permanent_reward", "reward": "+2 Weapon Set Passive Skill Points", "tags": ["boss"] },
-            { "id": "a4-ta-league", "name": "League Mechanic", "type": "league_mechanic" }
+            { "id": "a4-ta-league", "name": "League mechanic", "type": "league_mechanic", "reward": "Possible fixed reward" }
           ]
         },
         {
@@ -654,7 +654,7 @@
             { "id": "a4-ar-quest1", "name": "Defeat Torvian, Hand of the Saviour", "type": "quest", "tags": ["boss"] },
             { "id": "a4-ar-bonus1", "name": "Find Bells and interact with them", "type": "additional_reward", "reward": "Morning Bell: 3 Regal Orbs, Evening Bell: 3 Exalted Orbs" },
             { "id": "a4-ar-wp", "name": "Activate Waypoint", "type": "waypoint" },
-            { "id": "a4-ar-league", "name": "League Mechanic", "type": "league_mechanic" }
+            { "id": "a4-ar-league", "name": "League mechanic", "type": "league_mechanic", "reward": "Previously in 0.4: Uncut Skill Gem (Level 12)" }
           ]
         },
         {
@@ -664,7 +664,7 @@
           "tasks": [
             { "id": "a4-ex-quest1", "name": "Defeat Benedictus, First Herald", "type": "quest", "tags": ["boss"] },
             { "id": "a4-ex-wp", "name": "Activate Waypoint", "type": "waypoint" },
-            { "id": "a4-ex-league", "name": "League Mechanic", "type": "league_mechanic" }
+            { "id": "a4-ex-league", "name": "League mechanic", "type": "league_mechanic", "reward": "Previously in 0.4: Rare Amulet" }
           ]
         },
         {
@@ -673,7 +673,7 @@
           "prerequisites": [],
           "tasks": [
             { "id": "a4-ng-wp", "name": "Activate Waypoint", "type": "waypoint" },
-            { "id": "a4-ng-league", "name": "League Mechanic", "type": "league_mechanic" }
+            { "id": "a4-ng-league", "name": "League mechanic", "type": "league_mechanic", "reward": "Previously in 0.4: Greater Jeweller's Orb" }
           ]
         },
         {
@@ -683,7 +683,7 @@
           "tasks": [
             { "id": "a4-ht-quest1", "name": "Defeat Tavakai, the Chieftain", "type": "quest", "tags": ["boss"] },
             { "id": "a4-ht-wp", "name": "Activate Waypoint", "type": "waypoint" },
-            { "id": "a4-ht-league", "name": "League Mechanic", "type": "league_mechanic" }
+            { "id": "a4-ht-league", "name": "League mechanic", "type": "league_mechanic", "reward": "Previously in 0.4: Uncut Spirit Gem (Level 12)" }
           ]
         }
       ]
@@ -700,7 +700,7 @@
           "tasks": [
             { "id": "i1-sf-quest1", "name": "Defeat Isolde of the White Shroud and Heldra of the Black Pyre", "type": "quest", "tags": ["boss"] },
             { "id": "i1-sf-wp", "name": "Activate Waypoint", "type": "waypoint" },
-            { "id": "i1-sf-league", "name": "League Mechanic", "type": "league_mechanic" }
+            { "id": "i1-sf-league", "name": "League mechanic", "type": "league_mechanic", "reward": "Previously in 0.4: Uncut Support Gem (Level 4)" }
           ]
         },
         {
@@ -710,7 +710,7 @@
           "tasks": [
             { "id": "i1-sos-quest1", "name": "Defeat Siora, Blade of the Mists", "type": "quest", "tags": ["boss"] },
             { "id": "i1-sos-wp", "name": "Activate Waypoint", "type": "waypoint" },
-            { "id": "i1-sos-league", "name": "League Mechanic", "type": "league_mechanic" }
+            { "id": "i1-sos-league", "name": "League mechanic", "type": "league_mechanic", "reward": "Previously in 0.4: Exalted Orb" }
           ]
         },
         {
@@ -720,7 +720,7 @@
           "tasks": [
             { "id": "i1-bw-bonus1", "name": "Find Omen Altars", "type": "additional_reward", "reward": "Random Omens for crafting" },
             { "id": "i1-bw-wp", "name": "Activate Waypoint", "type": "waypoint" },
-            { "id": "i1-bw-league", "name": "League Mechanic", "type": "league_mechanic" }
+            { "id": "i1-bw-league", "name": "League mechanic", "type": "league_mechanic", "reward": "Previously in 0.4: Greater Orb of Transmutation" }
           ]
         },
         {
@@ -730,7 +730,7 @@
           "tasks": [
             { "id": "i3-wh-perm1", "name": "Kill Oswin, the Dread Warden", "type": "permanent_reward", "reward": "+2 Weapon Set Passive Skill Points", "tags": ["boss"] },
             { "id": "i1-wv-wp", "name": "Activate Waypoint", "type": "waypoint" },
-            { "id": "i1-wv-league", "name": "League Mechanic", "type": "league_mechanic" }
+            { "id": "i1-wv-league", "name": "League mechanic", "type": "league_mechanic", "reward": "Previously in 0.4: Greater Orb of Augmentation" }
           ]
         },
         {
@@ -740,7 +740,7 @@
           "tasks": [
             { "id": "i1-he-quest1", "name": "Defeat Thane Wulfric and Lady Elyswyth", "type": "quest", "tags": ["boss"] },
             { "id": "i1-he-wp", "name": "Activate Waypoint", "type": "waypoint" },
-            { "id": "i1-he-league", "name": "League Mechanic", "type": "league_mechanic" }
+            { "id": "i1-he-league", "name": "League mechanic", "type": "league_mechanic", "reward": "Previously in 0.4: Artificer's Orb" }
           ]
         }
       ]
@@ -757,7 +757,7 @@
           "tasks": [
             { "id": "i1-kc-perm1", "name": "Kill Akthi and Anundr", "type": "permanent_reward", "reward": "+2 Weapon Set Passive Skill Points", "tags": ["boss"] },
             { "id": "i1-ss-perm1", "name": "Loot Molten Shrine, use Molten One's Gift", "type": "permanent_reward", "reward": "+5% Maximum Life" },
-            { "id": "i1-kc-league", "name": "League Mechanic", "type": "league_mechanic" }
+            { "id": "i1-kc-league", "name": "League mechanic", "type": "league_mechanic", "reward": "Previously in 0.4: Gemcutter's Prism" }
           ]
         },
         {
@@ -766,7 +766,7 @@
           "prerequisites": ["khari-crossing"],
           "tasks": [
             { "id": "i2-pk-wp", "name": "Activate Waypoint", "type": "waypoint" },
-            { "id": "i2-pk-league", "name": "League Mechanic", "type": "league_mechanic" }
+            { "id": "i2-pk-league", "name": "League mechanic", "type": "league_mechanic", "reward": "Previously in 0.4: Orb of Alchemy" }
           ]
         },
         {
@@ -777,7 +777,7 @@
             { "id": "i2-sk-quest1", "name": "Defeat Elzarah, the Cobra Lord", "type": "quest", "tags": ["boss"] },
             { "id": "i1-sk-bonus1", "name": "Find 2 Baryas & place in sockets", "type": "additional_reward", "reward": "Wish for Rare Ring, Amulet, or Jewel" },
             { "id": "i2-sk-wp", "name": "Activate Waypoint", "type": "waypoint" },
-            { "id": "i1-sk-league", "name": "League Mechanic", "type": "league_mechanic" }
+            { "id": "i1-sk-league", "name": "League mechanic", "type": "league_mechanic", "reward": "Previously in 0.4: Orb of Chance" }
           ]
         },
         {
@@ -787,7 +787,7 @@
           "tasks": [
             { "id": "i2-gg-quest1", "name": "Defeat Vornas, the Fell Flame", "type": "quest", "tags": ["boss"] },
             { "id": "i2-gg-wp", "name": "Activate Waypoint", "type": "waypoint" },
-            { "id": "i2-gg-league", "name": "League Mechanic", "type": "league_mechanic" }
+            { "id": "i2-gg-league", "name": "League mechanic", "type": "league_mechanic", "reward": "Previously in 0.4: Greater Orb of Augmentation" }
           ]
         },
         {
@@ -797,7 +797,7 @@
           "tasks": [
             { "id": "i1-qi-perm1", "name": "Interact with the 7 Pillars (hidden in niches at map edge)", "type": "permanent_reward", "reward": "Swapable: +5 All Attributes / +5% All Ele Res / +12% CDR / +3% Move Speed / +20% Presence AoE / +15% Global Defences" },
             { "id": "i2-qi-wp", "name": "Activate Waypoint", "type": "waypoint" },
-            { "id": "i1-qi-league", "name": "League Mechanic", "type": "league_mechanic" }
+            { "id": "i1-qi-league", "name": "League mechanic", "type": "league_mechanic", "reward": "Previously in 0.4: Exalted Orb" }
           ]
         },
         {
@@ -808,7 +808,7 @@
             { "id": "i2-qr-quest1", "name": "Defeat Azmadi, the Faridun Prince", "type": "quest", "tags": ["boss"] },
             { "id": "i1-qr-bonus1", "name": "Find Vials and use them on Sacred Wells", "type": "additional_reward", "reward": "Various currency" },
             { "id": "i2-qr-wp", "name": "Activate Waypoint", "type": "waypoint" },
-            { "id": "i2-qr-league", "name": "League Mechanic", "type": "league_mechanic" }
+            { "id": "i2-qr-league", "name": "League mechanic", "type": "league_mechanic", "reward": "Previously in 0.4: Greater Orb of Transmutation" }
           ]
         }
       ]
@@ -825,7 +825,7 @@
           "tasks": [
             { "id": "i3-af-bonus1", "name": "Interact with Ancient Monument", "type": "additional_reward", "reward": "Uncut Skill Gem L14" },
             { "id": "i3-af-wp", "name": "Activate Waypoint", "type": "waypoint" },
-            { "id": "i3-af-league", "name": "League Mechanic", "type": "league_mechanic" }
+            { "id": "i3-af-league", "name": "League mechanic", "type": "league_mechanic", "reward": "Possible fixed reward" }
           ]
         },
         {
@@ -835,7 +835,7 @@
           "tasks": [
             { "id": "i2-kv-perm1", "name": "Kill Lythara, the Wayward Spear", "type": "permanent_reward", "reward": "+40 Maximum Spirit + Uncut Spirit Gem L14", "tags": ["boss"] },
             { "id": "i3-kv-wp", "name": "Activate Waypoint", "type": "waypoint" },
-            { "id": "i3-kv-league", "name": "League Mechanic", "type": "league_mechanic" }
+            { "id": "i3-kv-league", "name": "League mechanic", "type": "league_mechanic", "reward": "Previously in 0.4: Greater Rune" }
           ]
         },
         {
@@ -845,7 +845,7 @@
           "tasks": [
             { "id": "i3-gt-quest1", "name": "Defeat Rakkar, the Frozen Talon", "type": "quest", "tags": ["boss"] },
             { "id": "i3-gt-wp", "name": "Activate Waypoint", "type": "waypoint" },
-            { "id": "i3-gt-league", "name": "League Mechanic", "type": "league_mechanic" }
+            { "id": "i3-gt-league", "name": "League mechanic", "type": "league_mechanic", "reward": "Previously in 0.4: Greater Orb of Augmentation" }
           ]
         },
         {
@@ -856,7 +856,7 @@
           "tasks": [
             { "id": "i2-hc-perm1", "name": "Kill The Abominable Yeti", "type": "permanent_reward", "reward": "+2 Weapon Set Passive Skill Points", "tags": ["boss"] },
             { "id": "i3-hc-wp", "name": "Activate Waypoint", "type": "waypoint" },
-            { "id": "i3-hc-league", "name": "League Mechanic", "type": "league_mechanic" }
+            { "id": "i3-hc-league", "name": "League mechanic", "type": "league_mechanic", "reward": "Previously in 0.4: Chaos Orb" }
           ]
         },
         {
@@ -866,7 +866,7 @@
           "tasks": [
             { "id": "i2-kp-bonus1", "name": "Talk to Elder Madox", "type": "additional_reward", "reward": "Free Unique of your choice" },
             { "id": "i3-kp-wp", "name": "Activate Waypoint", "type": "waypoint" },
-            { "id": "i3-kp-league", "name": "League Mechanic", "type": "league_mechanic" }
+            { "id": "i3-kp-league", "name": "League mechanic", "type": "league_mechanic", "reward": "Previously in 0.4: Greater Orb of Transmutation" }
           ]
         },
         {
@@ -876,7 +876,7 @@
           "tasks": [
             { "id": "i3-er-quest1", "name": "Defeat Stormgore, the Guardian", "type": "quest", "tags": ["boss"] },
             { "id": "i3-er-wp", "name": "Activate Waypoint", "type": "waypoint" },
-            { "id": "i3-er-league", "name": "League Mechanic", "type": "league_mechanic" }
+            { "id": "i3-er-league", "name": "League mechanic", "type": "league_mechanic", "reward": "Previously in 0.4: Exalted Orb" }
           ]
         },
         {
@@ -886,7 +886,7 @@
           "tasks": [
             { "id": "i3-cv-quest1", "name": "Defeat Zelina, Blood Priestess and Zolin, Blood Priest", "type": "quest", "tags": ["boss"] },
             { "id": "i3-cv-wp", "name": "Activate Waypoint", "type": "waypoint" },
-            { "id": "i3-cv-league", "name": "League Mechanic", "type": "league_mechanic" }
+            { "id": "i3-cv-league", "name": "League mechanic", "type": "league_mechanic", "reward": "Possible fixed reward" }
           ]
         }
       ]
@@ -901,8 +901,7 @@
           "name": "Kingsmarch",
           "prerequisites": [],
           "tasks": [
-            { "id": "pi-km-perm1", "name": "Return to the Hooded One after completing all Interludes", "type": "permanent_reward", "reward": "+2 Weapon Set Passive Skill Points" },
-            { "id": "pi-km-league", "name": "League Mechanic", "type": "league_mechanic", "reward": "League Mechanic" }
+            { "id": "pi-km-perm1", "name": "Return to the Hooded One after completing all Interludes", "type": "permanent_reward", "reward": "+2 Weapon Set Passive Skill Points" }
           ]
         }
       ]
