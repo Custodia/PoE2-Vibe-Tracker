@@ -4,7 +4,7 @@ import { CSS } from '@dnd-kit/utilities';
 import TaskItem from './TaskItem';
 import useCampaignStore from '../stores/useCampaignStore';
 
-export default function AreaCard({ area }) {
+export default function AreaCard({ area, isBoundary }) {
   const completedTasks = useCampaignStore((s) => s.completedTasks);
   const completeAllTasks = useCampaignStore((s) => s.completeAllTasks);
   const hiddenTaskTypes = useCampaignStore((s) => s.hiddenTaskTypes);
@@ -28,8 +28,8 @@ export default function AreaCard({ area }) {
   } = useSortable({ id: area.id });
 
   const style = {
-    transform: CSS.Transform.toString(transform),
-    transition,
+    transform: isBoundary ? undefined : CSS.Transform.toString(transform),
+    transition: isBoundary ? undefined : transition,
   };
 
   return (
@@ -39,11 +39,13 @@ export default function AreaCard({ area }) {
       className={`rounded-lg border transition-colors ${
         isDragging
           ? 'border-indigo-500 bg-gray-800/80 shadow-lg shadow-indigo-500/10 z-10'
-          : permanentDone
-            ? 'border-gray-700/50 bg-gray-800/40'
-            : area.optional
-              ? 'border-dashed border-yellow-700/60 bg-gray-800'
-              : 'border-gray-700 bg-gray-800'
+          : isBoundary
+            ? 'border-red-800/60 bg-red-950/30'
+            : permanentDone
+              ? 'border-gray-700/50 bg-gray-800/40'
+              : area.optional
+                ? 'border-dashed border-yellow-700/60 bg-gray-800'
+                : 'border-gray-700 bg-gray-800'
       }`}
     >
       <div

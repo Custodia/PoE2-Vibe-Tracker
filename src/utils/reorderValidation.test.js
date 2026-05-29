@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { isValidOrder } from './reorderValidation';
+import { isValidOrder, getTransitivePrerequisites, getTransitiveDependents } from './reorderValidation';
 
 // Helper to build an areasById map from simple definitions
 function buildAreasById(defs) {
@@ -103,5 +103,86 @@ describe('isValidOrder', () => {
         areasById
       )
     ).toBe(false);
+  });
+});
+
+describe('getTransitivePrerequisites', () => {
+  it('returns empty set for area with no prerequisites', () => {
+    const areasById = buildAreasById({ a: [] });
+    expect(getTransitivePrerequisites('a', areasById)).toEqual(new Set());
+  });
+
+  it('returns direct prerequisites', () => {
+    const areasById = buildAreasById({ a: [], b: ['a'] });
+    expect(getTransitivePrerequisites('b', areasById)).toEqual(new Set(['a']));
+  });
+
+  it('returns transitive prerequisites through a chain', () => {
+    const areasById = buildAreasById({ a: [], b: ['a'], c: ['b'] });
+    expect(getTransitivePrerequisites('c', areasById)).toEqual(new Set(['a', 'b']));
+  });
+
+  it('handles diamond dependency graphs', () => {
+    const areasById = buildAreasById({
+      a: [],
+      b: ['a'],
+      c: ['a'],
+      d: ['b', 'c'],
+    });
+    expect(getTransitivePrerequisites('d', areasById)).toEqual(new Set(['a', 'b', 'c']));
+  });
+
+  it('returns empty set for unknown area ID', () => {
+    const areasById = buildAreasById({ a: [] });
+    expect(getTransitivePrerequisites('unknown', areasById)).toEqual(new Set());
+  });
+
+  it('handles missing prerequisite in areasById gracefully', () => {
+    const areasById = buildAreasById({ b: ['a'] });
+    // 'a' is listed as prerequisite but not in areasById
+    expect(getTransitivePrerequisites('b', areasById)).toEqual(new Set(['a']));
+  });
+});
+
+describe('getTransitiveDependents', () => {
+  it('returns empty set for area with no dependents', () => {
+    const areasById = buildAreasById({ a: [], b: [] });
+    expect(getTransitiveDependents('a', areasById)).toEqual(new Set());
+  });
+
+  it('returns direct dependents', () => {
+    const areasById = buildAreasById({ a: [], b: ['a'] });
+    expect(getTransitiveDependents('a', areasById)).toEqual(new Set(['b']));
+  });
+
+  it('returns transitive dependents through a chain', () => {
+    const areasById = buildAreasById({ a: [], b: ['a'], c: ['b'] });
+    expect(getTransitiveDependents('a', areasById)).toEqual(new Set(['b', 'c']));
+  });
+
+  it('handles diamond dependency graphs', () => {
+    const areasById = buildAreasById({
+      a: [],
+      b: ['a'],
+      c: ['a'],
+      d: ['b', 'c'],
+    });
+    expect(getTransitiveDependents('a', areasById)).toEqual(new Set(['b', 'c', 'd']));
+  });
+
+  it('returns only downstream dependents, not siblings', () => {
+    const areasById = buildAreasById({
+      a: [],
+      b: ['a'],
+      c: ['a'],
+      d: ['b'],
+    });
+    // Dependents of b should be d, not c
+    expect(getTransitiveDependents('b', areasById)).toEqual(new Set(['d']));
+  });
+
+  it('returns empty set for area not referenced by any other', () => {
+    const areasById = buildAreasById({ a: [], b: ['a'], c: ['a'] });
+    expect(getTransitiveDependents('b', areasById)).toEqual(new Set());
   });
 });

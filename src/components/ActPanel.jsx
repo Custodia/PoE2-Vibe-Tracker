@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import { useMemo, useState } from 'react';
 import {
   DndContext,
   closestCenter,
@@ -15,7 +15,7 @@ import {
 import { arrayMove } from '@dnd-kit/sortable';
 import AreaCard from './AreaCard';
 import useCampaignStore from '../stores/useCampaignStore';
-import { isValidOrder } from '../utils/reorderValidation';
+import { isValidOrder, getTransitivePrerequisites, getTransitiveDependents } from '../utils/reorderValidation';
 
 export default function ActPanel({ act }) {
   const areaOrder = useCampaignStore((s) => s.areaOrder[act.id] || []);
@@ -38,7 +38,17 @@ export default function ActPanel({ act }) {
     useSensor(KeyboardSensor, { coordinateGetter: sortableKeyboardCoordinates })
   );
 
+  const [boundaryIds, setBoundaryIds] = useState(new Set());
+
+  function handleDragStart(event) {
+    const activeId = event.active.id;
+    const prereqs = getTransitivePrerequisites(activeId, areasById);
+    const dependents = getTransitiveDependents(activeId, areasById);
+    setBoundaryIds(new Set([...prereqs, ...dependents]));
+  }
+
   function handleDragEnd(event) {
+    setBoundaryIds(new Set());
     const { active, over } = event;
     if (!over || active.id === over.id) return;
 
@@ -50,6 +60,10 @@ export default function ActPanel({ act }) {
     if (isValidOrder(proposed, areasById)) {
       reorderAreas(act.id, proposed);
     }
+  }
+
+  function handleDragCancel() {
+    setBoundaryIds(new Set());
   }
 
   const completedTasks = useCampaignStore((s) => s.completedTasks);
@@ -96,12 +110,14 @@ export default function ActPanel({ act }) {
       <DndContext
         sensors={sensors}
         collisionDetection={closestCenter}
+        onDragStart={handleDragStart}
         onDragEnd={handleDragEnd}
+        onDragCancel={handleDragCancel}
       >
         <SortableContext items={areaOrder} strategy={verticalListSortingStrategy}>
           <div className="space-y-3">
             {orderedAreas.map((area) => (
-              <AreaCard key={area.id} area={area} />
+              <AreaCard key={area.id} area={area} isBoundary={boundaryIds.has(area.id)} />
             ))}
           </div>
         </SortableContext>

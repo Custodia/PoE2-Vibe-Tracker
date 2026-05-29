@@ -8,11 +8,11 @@ import AreaCard from './AreaCard';
 import useCampaignStore from '../stores/useCampaignStore';
 
 // AreaCard requires DnD context to render properly
-function renderAreaCard(area) {
+function renderAreaCard(area, { isBoundary = false } = {}) {
   return render(
     <DndContext>
       <SortableContext items={[area.id]} strategy={verticalListSortingStrategy}>
-        <AreaCard area={area} />
+        <AreaCard area={area} isBoundary={isBoundary} />
       </SortableContext>
     </DndContext>
   );
@@ -110,6 +110,28 @@ describe('AreaCard', () => {
     renderAreaCard(testArea);
     expect(screen.getByText('Task One')).toBeInTheDocument();
     expect(screen.getByText('Task Two')).toBeInTheDocument();
+  });
+
+  describe('boundary styling', () => {
+    it('applies reddish styling when isBoundary is true', () => {
+      renderAreaCard(testArea, { isBoundary: true });
+      const card = screen.getByText('Test Area').closest('.rounded-lg');
+      expect(card.className).toContain('border-red-800/60');
+      expect(card.className).toContain('bg-red-950/30');
+    });
+
+    it('does not apply reddish styling when isBoundary is false', () => {
+      renderAreaCard(testArea, { isBoundary: false });
+      const card = screen.getByText('Test Area').closest('.rounded-lg');
+      expect(card.className).not.toContain('border-red-800/60');
+      expect(card.className).not.toContain('bg-red-950/30');
+    });
+
+    it('does not apply transform when isBoundary is true', () => {
+      renderAreaCard(testArea, { isBoundary: true });
+      const card = screen.getByText('Test Area').closest('.rounded-lg');
+      expect(card.style.transform).toBe('');
+    });
   });
 
   describe('hidden task types', () => {
