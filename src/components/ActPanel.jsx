@@ -33,6 +33,20 @@ export default function ActPanel({ act }) {
     return areaOrder.map((id) => areasById[id]).filter(Boolean);
   }, [areaOrder, areasById]);
 
+  const completedTasks = useCampaignStore((s) => s.completedTasks);
+  const hiddenTaskTypes = useCampaignStore((s) => s.hiddenTaskTypes);
+  const hideCompletedZones = useCampaignStore((s) => s.hideCompletedZones);
+
+  const displayedAreas = useMemo(() => {
+    if (!hideCompletedZones) return orderedAreas;
+    return orderedAreas.filter((area) => {
+      const visible = area.tasks.filter((t) => !hiddenTaskTypes.has(t.type));
+      if (visible.length === 0) return true;
+      const done = visible.filter((t) => completedTasks.has(t.id)).length;
+      return done < visible.length;
+    });
+  }, [orderedAreas, hideCompletedZones, hiddenTaskTypes, completedTasks]);
+
   const sensors = useSensors(
     useSensor(PointerSensor, { activationConstraint: { distance: 5 } }),
     useSensor(KeyboardSensor, { coordinateGetter: sortableKeyboardCoordinates })
@@ -65,9 +79,6 @@ export default function ActPanel({ act }) {
   function handleDragCancel() {
     setBoundaryIds(new Set());
   }
-
-  const completedTasks = useCampaignStore((s) => s.completedTasks);
-  const hiddenTaskTypes = useCampaignStore((s) => s.hiddenTaskTypes);
 
   const allTasks = act.areas.flatMap((a) => a.tasks).filter((t) => !hiddenTaskTypes.has(t.type));
   const permTasks = allTasks.filter((t) => t.type === 'permanent_reward');
@@ -114,9 +125,9 @@ export default function ActPanel({ act }) {
         onDragEnd={handleDragEnd}
         onDragCancel={handleDragCancel}
       >
-        <SortableContext items={areaOrder} strategy={verticalListSortingStrategy}>
+        <SortableContext items={displayedAreas.map((a) => a.id)} strategy={verticalListSortingStrategy}>
           <div className="space-y-3">
-            {orderedAreas.map((area) => (
+            {displayedAreas.map((area) => (
               <AreaCard key={area.id} area={area} isBoundary={boundaryIds.has(area.id)} />
             ))}
           </div>

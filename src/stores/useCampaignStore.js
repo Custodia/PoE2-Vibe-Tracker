@@ -12,6 +12,7 @@ function loadFromStorage() {
       completedTasks: new Set(parsed.completedTasks || []),
       areaOrder: parsed.areaOrder || {},
       hiddenTaskTypes: new Set(parsed.hiddenTaskTypes || []),
+      hideCompletedZones: parsed.hideCompletedZones || false,
     };
   } catch {
     return null;
@@ -26,6 +27,7 @@ function saveToStorage(state) {
         completedTasks: [...state.completedTasks],
         areaOrder: state.areaOrder,
         hiddenTaskTypes: [...(state.hiddenTaskTypes || [])],
+        hideCompletedZones: state.hideCompletedZones || false,
       })
     );
   } catch {
@@ -72,6 +74,7 @@ const useCampaignStore = create((set, _get) => ({
     ? reconcileAreaOrder(saved.areaOrder, defaultOrder)
     : defaultOrder,
   hiddenTaskTypes: saved?.hiddenTaskTypes || new Set(),
+  hideCompletedZones: saved?.hideCompletedZones || false,
 
   toggleTask(taskId) {
     set((state) => {
@@ -108,6 +111,14 @@ const useCampaignStore = create((set, _get) => ({
     });
   },
 
+  toggleHideCompletedZones() {
+    set((state) => {
+      const newState = { hideCompletedZones: !state.hideCompletedZones };
+      saveToStorage({ ...state, ...newState });
+      return newState;
+    });
+  },
+
   toggleHiddenTaskType(taskType) {
     set((state) => {
       const next = new Set(state.hiddenTaskTypes);
@@ -126,7 +137,7 @@ const useCampaignStore = create((set, _get) => ({
     const freshOrder = buildDefaultAreaOrder();
     set((state) => {
       const newState = { completedTasks: new Set(), areaOrder: freshOrder };
-      saveToStorage({ ...newState, hiddenTaskTypes: state.hiddenTaskTypes });
+      saveToStorage({ ...newState, hiddenTaskTypes: state.hiddenTaskTypes, hideCompletedZones: state.hideCompletedZones });
       return newState;
     });
   },

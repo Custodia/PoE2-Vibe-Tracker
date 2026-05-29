@@ -26,6 +26,10 @@ describe('useCampaignStore', () => {
       for (const type of useCampaignStore.getState().hiddenTaskTypes) {
         useCampaignStore.getState().toggleHiddenTaskType(type);
       }
+      // Reset hideCompletedZones (also preserved by resetProgress)
+      if (useCampaignStore.getState().hideCompletedZones) {
+        useCampaignStore.getState().toggleHideCompletedZones();
+      }
     });
   });
 
@@ -216,6 +220,49 @@ describe('useCampaignStore', () => {
       });
       const saved = JSON.parse(localStorageMock.setItem.mock.calls.at(-1)[1]);
       expect(saved.hiddenTaskTypes).toContain('additional_reward');
+    });
+  });
+
+  describe('hideCompletedZones', () => {
+    it('defaults to false', () => {
+      expect(useCampaignStore.getState().hideCompletedZones).toBe(false);
+    });
+
+    it('toggles to true', () => {
+      act(() => {
+        useCampaignStore.getState().toggleHideCompletedZones();
+      });
+      expect(useCampaignStore.getState().hideCompletedZones).toBe(true);
+    });
+
+    it('toggles back to false', () => {
+      act(() => {
+        useCampaignStore.getState().toggleHideCompletedZones();
+      });
+      act(() => {
+        useCampaignStore.getState().toggleHideCompletedZones();
+      });
+      expect(useCampaignStore.getState().hideCompletedZones).toBe(false);
+    });
+
+    it('persists to localStorage', () => {
+      act(() => {
+        useCampaignStore.getState().toggleHideCompletedZones();
+      });
+      const saved = JSON.parse(localStorageMock.setItem.mock.calls.at(-1)[1]);
+      expect(saved.hideCompletedZones).toBe(true);
+    });
+
+    it('is preserved across resetProgress', () => {
+      act(() => {
+        useCampaignStore.getState().toggleHideCompletedZones();
+      });
+      act(() => {
+        useCampaignStore.getState().resetProgress();
+      });
+      expect(useCampaignStore.getState().hideCompletedZones).toBe(true);
+      const saved = JSON.parse(localStorageMock.setItem.mock.calls.at(-1)[1]);
+      expect(saved.hideCompletedZones).toBe(true);
     });
   });
 });

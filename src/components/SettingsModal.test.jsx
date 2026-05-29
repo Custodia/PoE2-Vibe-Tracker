@@ -16,6 +16,10 @@ describe('SettingsModal', () => {
       for (const type of useCampaignStore.getState().hiddenTaskTypes) {
         useCampaignStore.getState().toggleHiddenTaskType(type);
       }
+      // Reset hideCompletedZones
+      if (useCampaignStore.getState().hideCompletedZones) {
+        useCampaignStore.getState().toggleHideCompletedZones();
+      }
     });
   });
 
@@ -82,6 +86,43 @@ describe('SettingsModal', () => {
 
     await user.keyboard('{Escape}');
     expect(onClose).toHaveBeenCalledOnce();
+  });
+
+  it('renders General section header', () => {
+    render(<SettingsModal onClose={onClose} />);
+    expect(screen.getByText('General')).toBeInTheDocument();
+  });
+
+  it('renders Visibility section header', () => {
+    render(<SettingsModal onClose={onClose} />);
+    expect(screen.getByText('Visibility')).toBeInTheDocument();
+  });
+
+  it('renders the Hide completed zones toggle', () => {
+    render(<SettingsModal onClose={onClose} />);
+    expect(screen.getByText('Hide completed zones')).toBeInTheDocument();
+    expect(screen.getByRole('switch', { name: 'Hide completed zones' })).toBeInTheDocument();
+  });
+
+  it('toggles hideCompletedZones when switch is clicked', async () => {
+    const user = userEvent.setup();
+    render(<SettingsModal onClose={onClose} />);
+
+    const toggle = screen.getByRole('switch', { name: 'Hide completed zones' });
+    expect(toggle).toHaveAttribute('aria-checked', 'false');
+
+    await user.click(toggle);
+    expect(useCampaignStore.getState().hideCompletedZones).toBe(true);
+  });
+
+  it('reflects current hideCompletedZones state', () => {
+    act(() => {
+      useCampaignStore.getState().toggleHideCompletedZones();
+    });
+    render(<SettingsModal onClose={onClose} />);
+
+    const toggle = screen.getByRole('switch', { name: 'Hide completed zones' });
+    expect(toggle).toHaveAttribute('aria-checked', 'true');
   });
 
   it('can toggle a type off after toggling it on', async () => {

@@ -10,6 +10,8 @@ const TOGGLES = [
 export default function SettingsModal({ onClose }) {
   const hiddenTaskTypes = useCampaignStore((s) => s.hiddenTaskTypes);
   const toggleHiddenTaskType = useCampaignStore((s) => s.toggleHiddenTaskType);
+  const hideCompletedZones = useCampaignStore((s) => s.hideCompletedZones);
+  const toggleHideCompletedZones = useCampaignStore((s) => s.toggleHideCompletedZones);
 
   useEffect(() => {
     function handleKey(e) {
@@ -37,26 +39,49 @@ export default function SettingsModal({ onClose }) {
             </svg>
           </button>
         </div>
-        <div className="space-y-3">
-          {TOGGLES.map(({ type, label }) => {
-            const active = hiddenTaskTypes.has(type);
-            return (
-              <div key={type} className="flex items-center justify-between">
-                <span className="text-sm text-gray-300">{label}</span>
-                <button
-                  onClick={() => toggleHiddenTaskType(type)}
-                  className={`relative w-9 h-5 rounded-full transition-colors ${active ? 'bg-indigo-500' : 'bg-gray-600'}`}
-                  role="switch"
-                  aria-checked={active}
-                  aria-label={label}
-                >
-                  <span
-                    className={`absolute top-0.5 left-0.5 w-4 h-4 rounded-full bg-white transition-transform ${active ? 'translate-x-4' : ''}`}
-                  />
-                </button>
-              </div>
-            );
-          })}
+        <div className="space-y-4">
+          <div>
+            <h3 className="text-[10px] font-semibold uppercase tracking-wider text-gray-500 mb-2">General</h3>
+            <div className="flex items-center justify-between">
+              <span className="text-sm text-gray-300">Hide completed zones</span>
+              <button
+                onClick={toggleHideCompletedZones}
+                className={`relative w-9 h-5 rounded-full transition-colors ${hideCompletedZones ? 'bg-indigo-500' : 'bg-gray-600'}`}
+                role="switch"
+                aria-checked={hideCompletedZones}
+                aria-label="Hide completed zones"
+              >
+                <span
+                  className={`absolute top-0.5 left-0.5 w-4 h-4 rounded-full bg-white transition-transform ${hideCompletedZones ? 'translate-x-4' : ''}`}
+                />
+              </button>
+            </div>
+          </div>
+          <div className="border-t border-gray-700" />
+          <div>
+            <h3 className="text-[10px] font-semibold uppercase tracking-wider text-gray-500 mb-2">Visibility</h3>
+            <div className="space-y-3">
+              {TOGGLES.map(({ type, label }) => {
+                const active = hiddenTaskTypes.has(type);
+                return (
+                  <div key={type} className="flex items-center justify-between">
+                    <span className="text-sm text-gray-300">{label}</span>
+                    <button
+                      onClick={() => toggleHiddenTaskType(type)}
+                      className={`relative w-9 h-5 rounded-full transition-colors ${active ? 'bg-indigo-500' : 'bg-gray-600'}`}
+                      role="switch"
+                      aria-checked={active}
+                      aria-label={label}
+                    >
+                      <span
+                        className={`absolute top-0.5 left-0.5 w-4 h-4 rounded-full bg-white transition-transform ${active ? 'translate-x-4' : ''}`}
+                      />
+                    </button>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
         </div>
       </div>
     </div>
